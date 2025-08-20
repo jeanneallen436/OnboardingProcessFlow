@@ -1,0 +1,7 @@
+.settings/
+.local/
+.objects/
+.project/
+.tmh/
+**/*.log
+Data/
