@@ -1,6 +1,2 @@
-*.xaml text diff working-tree-encoding=UTF-8 eol=crlf
+*.xaml text diff=cleandiff working-tree-encoding=UTF-8 eol=crlf
 *.json text diff working-tree-encoding=UTF-8 eol=crlf
-*.config text diff working-tree-encoding=UTF-8 eol=crlf
-*.txt text diff working-tree-encoding=UTF-8 eol=crlf
-*.md text diff working-tree-encoding=UTF-8 eol=crlf
-*.log text diff working-tree-encoding=UTF-8 eol=crlf

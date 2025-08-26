@@ -3,5 +3,7 @@
 .objects/
 .project/
 .tmh/
+.storage/
+.screenshots/
 **/*.log
 Data/
