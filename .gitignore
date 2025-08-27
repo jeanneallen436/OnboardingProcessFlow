@@ -6,4 +6,5 @@
 .storage/
 .screenshots/
 **/*.log
+*.exe
 Data/
