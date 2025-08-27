@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -23,11 +23,17 @@
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
       <x:String>System.Windows.Markup</x:String>
-      <x:String>GlobalVariablesNamespace</x:String>
-      <x:String>GlobalConstantsNamespace</x:String>
       <x:String>System.Linq.Expressions</x:String>
       <x:String>System.Runtime.Serialization</x:String>
       <x:String>System.Reflection</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Net</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -73,15 +79,28 @@
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>System.Collections</AssemblyReference>
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Net.WebClient</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Net.HttpListener</AssemblyReference>
+      <AssemblyReference>System.Net.WebProxy</AssemblyReference>
+      <AssemblyReference>System.Net.NameResolution</AssemblyReference>
+      <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
+      <AssemblyReference>System.Net.Requests</AssemblyReference>
+      <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1085.6000000000001,698.0566666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Orchestrates onboarding, creates GitHub account, downloads VS Code" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1085.6000000000001,698.0566666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <StateMachine InitialState="{x:Reference __ReferenceID3}" DisplayName="State Machine" sap:VirtualizedContainerService.HintSize="1085.6000000000001,698.4" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+    <StateMachine InitialState="{x:Reference __ReferenceID0}" DisplayName="State Machine" sap:VirtualizedContainerService.HintSize="1085.6000000000001,698.4" sap2010:WorkflowViewState.IdRef="StateMachine_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -91,9 +110,18 @@
           <av:PointCollection x:Key="ConnectorLocation">335,60 365,60 365,65.25 400,65.25</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Read out any necesary data" DisplayName="This is where it starts" sap:VirtualizedContainerService.HintSize="240,160.8" sap2010:WorkflowViewState.IdRef="State_1">
+      <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="Read out any necesary data" DisplayName="This is where it starts" sap:VirtualizedContainerService.HintSize="240,160.8" sap2010:WorkflowViewState.IdRef="State_1">
         <State.Entry>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Initializing the process&quot;]" />
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Assignvariables - Invoke Workflow File (Assignvariables.xaml)" sap:VirtualizedContainerService.HintSize="334.4,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Assignvariables.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InOutArgument x:TypeArguments="x:String" x:Key="DummyEmail">[DummyEmail]</InOutArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="EmailIsValid">[EmailIsValid]</OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="GitHubUsername">[GitHubUsername]</OutArgument>
+              <InOutArgument x:TypeArguments="ss:SecureString" x:Key="GitHubPassword">[GitHubPassword]</InOutArgument>
+              <InOutArgument x:TypeArguments="ss:SecureString" x:Key="PasswordConfirmation">[PasswordConfirmation]</InOutArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="PasswordsMatch">[PasswordsMatch]</OutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
         </State.Entry>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -106,10 +134,10 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <State.Exit>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Exiting the inti state&quot;]" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Variables have been saved: &quot; + &quot;Username: &quot; + GitHubUsername.ToString + &quot;, Password: &quot; + GitHubPassword.ToString  + &quot;, Email: &quot; + DummyEmail.ToString]" />
         </State.Exit>
         <State.Transitions>
-          <Transition DisplayName="T1" sap2010:WorkflowViewState.IdRef="Transition_1">
+          <Transition DisplayName="T1" sap:VirtualizedContainerService.HintSize="448.8,490.4" sap2010:WorkflowViewState.IdRef="Transition_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <av:PointCollection x:Key="ConnectorLocation">640,105.5 670,105.5 670,141.5 710,141.5</av:PointCollection>
@@ -117,26 +145,19 @@
                 <x:Int32 x:Key="DestConnectionPointIndex">33</x:Int32>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
+            <Transition.Condition>
+              <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="EmailIsValid and PasswordsMatch" />
+            </Transition.Condition>
             <Transition.To>
-              <State x:Name="__ReferenceID0" DisplayName="Create Github Account" sap:VirtualizedContainerService.HintSize="280,169.6" sap2010:WorkflowViewState.IdRef="State_2">
+              <State x:Name="__ReferenceID1" DisplayName="Create Github Account" sap:VirtualizedContainerService.HintSize="280,169.6" sap2010:WorkflowViewState.IdRef="State_2">
                 <State.Entry>
-                  <Sequence sap:VirtualizedContainerService.HintSize="450,676" sap2010:WorkflowViewState.IdRef="Sequence_2">
-                    <Sequence.Variables>
-                      <Variable x:TypeArguments="x:String" Name="outputResult" />
-                    </Sequence.Variables>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="416,275" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="OK" Title="Enter your email" TopMost="False">
-                      <ui:InputDialog.Result>
-                        <OutArgument x:TypeArguments="x:String">[outputResult]</OutArgument>
-                      </ui:InputDialog.Result>
-                    </ui:InputDialog>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[&quot;Creating a github account&quot;]" />
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_6" Message="[outputResult]" />
-                  </Sequence>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CreateGitHubAccount - Invoke Workflow File (CreateGitHubAccount.xaml)" sap:VirtualizedContainerService.HintSize="336.8,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="CreateGitHubAccount.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InOutArgument x:TypeArguments="x:String" x:Key="DummyEmail">[DummyEmail]</InOutArgument>
+                      <InOutArgument x:TypeArguments="ss:SecureString" x:Key="GitHubPassword">[GitHubPassword]</InOutArgument>
+                      <InOutArgument x:TypeArguments="x:String" x:Key="GitHubUsername">[GitHubUsername]</InOutArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
                 </State.Entry>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -148,7 +169,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <State.Exit>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,143" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;got an email! WooHoo!&quot;]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="336.8,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;got an email! WooHoo!&quot;]" />
                 </State.Exit>
                 <State.Transitions>
                   <Transition DisplayName="T2" sap2010:WorkflowViewState.IdRef="Transition_2">
@@ -160,7 +181,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <Transition.To>
-                      <State x:Name="__ReferenceID1" DisplayName="Download VS Code" sap:VirtualizedContainerService.HintSize="260,180" sap2010:WorkflowViewState.IdRef="State_3">
+                      <State x:Name="__ReferenceID2" DisplayName="Download VS Code" sap:VirtualizedContainerService.HintSize="260,180" sap2010:WorkflowViewState.IdRef="State_3">
                         <State.Entry>
                           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_7" Message="[&quot;Downloading VS Code&quot;]" />
                         </State.Entry>
@@ -186,7 +207,7 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <Transition.To>
-                              <State x:Name="__ReferenceID2" DisplayName="Onboarding Complete" sap:VirtualizedContainerService.HintSize="240,189.6" sap2010:WorkflowViewState.IdRef="State_4" IsFinal="True">
+                              <State x:Name="__ReferenceID3" DisplayName="Onboarding Complete" sap:VirtualizedContainerService.HintSize="240,189.6" sap2010:WorkflowViewState.IdRef="State_4" IsFinal="True">
                                 <State.Entry>
                                   <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,86" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;Finished onboarding!!&quot;]" />
                                 </State.Entry>
@@ -210,11 +231,34 @@
               </State>
             </Transition.To>
           </Transition>
+          <Transition DisplayName="T4" sap:VirtualizedContainerService.HintSize="448.8,490.4" sap2010:WorkflowViewState.IdRef="Transition_4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:PointCollection x:Key="ConnectorLocation">604,185.8 604,215.8 436,215.8 436,185.8</av:PointCollection>
+                <x:Int32 x:Key="SrcConnectionPointIndex">67</x:Int32>
+                <x:Int32 x:Key="DestConnectionPointIndex">11</x:Int32>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Transition.To>
+              <x:Reference>__ReferenceID0</x:Reference>
+            </Transition.To>
+            <Transition.Condition>
+              <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="Not EmailIsValid or Not PasswordsMatch" />
+            </Transition.Condition>
+          </Transition>
         </State.Transitions>
       </State>
-      <x:Reference>__ReferenceID0</x:Reference>
       <x:Reference>__ReferenceID1</x:Reference>
       <x:Reference>__ReferenceID2</x:Reference>
+      <x:Reference>__ReferenceID3</x:Reference>
+      <StateMachine.Variables>
+        <Variable x:TypeArguments="ss:SecureString" Name="GitHubPassword" />
+        <Variable x:TypeArguments="x:String" Name="GitHubUsername" />
+        <Variable x:TypeArguments="x:String" Name="DummyEmail" />
+        <Variable x:TypeArguments="x:Boolean" Name="EmailIsValid" />
+        <Variable x:TypeArguments="ss:SecureString" Name="PasswordConfirmation" />
+        <Variable x:TypeArguments="x:Boolean" Name="PasswordsMatch" />
+      </StateMachine.Variables>
     </StateMachine>
   </Sequence>
 </Activity>
