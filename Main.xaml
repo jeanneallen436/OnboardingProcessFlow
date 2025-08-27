@@ -75,13 +75,13 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1112,659.6566666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1085.6000000000001,698.0566666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <StateMachine InitialState="{x:Reference __ReferenceID3}" DisplayName="State Machine" sap:VirtualizedContainerService.HintSize="1112,660" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+    <StateMachine InitialState="{x:Reference __ReferenceID3}" DisplayName="State Machine" sap:VirtualizedContainerService.HintSize="1085.6000000000001,698.4" sap2010:WorkflowViewState.IdRef="StateMachine_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -91,14 +91,14 @@
           <av:PointCollection x:Key="ConnectorLocation">335,60 365,60 365,65.25 400,65.25</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Read out any necesary data" DisplayName="Initialize" sap:VirtualizedContainerService.HintSize="240,161" sap2010:WorkflowViewState.IdRef="State_1">
+      <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Read out any necesary data" DisplayName="This is where it starts" sap:VirtualizedContainerService.HintSize="240,160.8" sap2010:WorkflowViewState.IdRef="State_1">
         <State.Entry>
           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Initializing the process&quot;]" />
         </State.Entry>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <av:Point x:Key="ShapeLocation">400,25</av:Point>
-            <av:Size x:Key="ShapeSize">240,161</av:Size>
+            <av:Size x:Key="ShapeSize">240,160.8</av:Size>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
             <x:Double x:Key="StateContainerWidth">228</x:Double>
             <x:Double x:Key="StateContainerHeight">98.6566666666667</x:Double>
@@ -118,7 +118,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <Transition.To>
-              <State x:Name="__ReferenceID0" DisplayName="Create Github Account" sap:VirtualizedContainerService.HintSize="496,1074" sap2010:WorkflowViewState.IdRef="State_2">
+              <State x:Name="__ReferenceID0" DisplayName="Create Github Account" sap:VirtualizedContainerService.HintSize="280,169.6" sap2010:WorkflowViewState.IdRef="State_2">
                 <State.Entry>
                   <Sequence sap:VirtualizedContainerService.HintSize="450,676" sap2010:WorkflowViewState.IdRef="Sequence_2">
                     <Sequence.Variables>
@@ -141,7 +141,7 @@
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <av:Point x:Key="ShapeLocation">710,65</av:Point>
-                    <av:Size x:Key="ShapeSize">280,170</av:Size>
+                    <av:Size x:Key="ShapeSize">280,169.6</av:Size>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     <x:Double x:Key="StateContainerWidth">268</x:Double>
                     <x:Double x:Key="StateContainerHeight">138.6566666666667</x:Double>
@@ -160,7 +160,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <Transition.To>
-                      <State x:Name="__ReferenceID1" DisplayName="Download VS Code" sap:VirtualizedContainerService.HintSize="380,541" sap2010:WorkflowViewState.IdRef="State_3">
+                      <State x:Name="__ReferenceID1" DisplayName="Download VS Code" sap:VirtualizedContainerService.HintSize="260,180" sap2010:WorkflowViewState.IdRef="State_3">
                         <State.Entry>
                           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_7" Message="[&quot;Downloading VS Code&quot;]" />
                         </State.Entry>
@@ -186,14 +186,14 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <Transition.To>
-                              <State x:Name="__ReferenceID2" DisplayName="Onboarding Complete" sap:VirtualizedContainerService.HintSize="380,225" sap2010:WorkflowViewState.IdRef="State_4" IsFinal="True">
+                              <State x:Name="__ReferenceID2" DisplayName="Onboarding Complete" sap:VirtualizedContainerService.HintSize="240,189.6" sap2010:WorkflowViewState.IdRef="State_4" IsFinal="True">
                                 <State.Entry>
                                   <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,86" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;Finished onboarding!!&quot;]" />
                                 </State.Entry>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <av:Point x:Key="ShapeLocation">390,325</av:Point>
-                                    <av:Size x:Key="ShapeSize">240,190</av:Size>
+                                    <av:Size x:Key="ShapeSize">240,189.6</av:Size>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     <x:Double x:Key="StateContainerWidth">228</x:Double>
                                     <x:Double x:Key="StateContainerHeight">158.65666666666675</x:Double>
