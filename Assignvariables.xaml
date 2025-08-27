@@ -37,6 +37,11 @@
       <x:String>GlobalConstantsNamespace</x:String>
       <x:String>System.Linq.Expressions</x:String>
       <x:String>System.Net</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -98,29 +103,35 @@
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="1466,3262" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap:VirtualizedContainerService.HintSize="1466,3382" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Assign variables" sap:VirtualizedContainerService.HintSize="574,3239" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Assign variables" sap:VirtualizedContainerService.HintSize="574,3359" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch DisplayName="Try Assigning inputs to variables" sap:VirtualizedContainerService.HintSize="540,3133" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch DisplayName="Try Assigning inputs to variables" sap:VirtualizedContainerService.HintSize="540,3276" sap2010:WorkflowViewState.IdRef="TryCatch_1">
         <TryCatch.Try>
-          <Sequence DisplayName="Try Assigning inputs to variables" sap:VirtualizedContainerService.HintSize="538,2675" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Try Assigning inputs to variables" sap:VirtualizedContainerService.HintSize="538,2795" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Assigning inputs to variables" sap:VirtualizedContainerService.HintSize="504,2615" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="Assigning inputs to variables" sap:VirtualizedContainerService.HintSize="504,2735" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="PasswordResult" />
                 <Variable x:TypeArguments="x:String" Name="GHPasswordConfirmation" />
@@ -155,6 +166,7 @@
                   <InArgument x:TypeArguments="ss:SecureString">[New System.Net.NetworkCredential("", PasswordResult).SecurePassword]</InArgument>
                 </Assign.Value>
               </Assign>
+              <ui:ReadRange DataTable="{x:Null}" Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="470,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="test" WorkbookPath="test" />
               <ui:LogMessage DisplayName="Log GitHubPassword" sap:VirtualizedContainerService.HintSize="470,175" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[GitHubPassword]" />
               <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Confirm Password" sap:VirtualizedContainerService.HintSize="470,275" sap2010:WorkflowViewState.IdRef="InputDialog_4" IsPassword="True" Label="Confirm Password" Title="Confirm your GitHub Password" TopMost="False">
                 <ui:InputDialog.Result>
