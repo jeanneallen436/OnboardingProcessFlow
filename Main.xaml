@@ -96,13 +96,13 @@
       <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Orchestrates onboarding, creates GitHub account, downloads VS Code" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1085.6000000000001,698.0566666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Orchestrates onboarding, creates GitHub account, downloads VS Code" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1112,631.6566666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <StateMachine InitialState="{x:Reference __ReferenceID0}" DisplayName="State Machine" sap:VirtualizedContainerService.HintSize="1472,818" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+    <StateMachine InitialState="{x:Reference __ReferenceID0}" DisplayName="State Machine" sap:VirtualizedContainerService.HintSize="1112,632" sap2010:WorkflowViewState.IdRef="StateMachine_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -218,7 +218,7 @@
                           <Transition DisplayName="T3" sap2010:WorkflowViewState.IdRef="Transition_3">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <av:PointCollection x:Key="ConnectorLocation">780,450 750,450 750,480.5 480,480.5</av:PointCollection>
+                                <av:PointCollection x:Key="ConnectorLocation">780,450 750,450 750,390.5 590,390.5</av:PointCollection>
                                 <x:Int32 x:Key="SrcConnectionPointIndex">37</x:Int32>
                                 <x:Int32 x:Key="DestConnectionPointIndex">32</x:Int32>
                               </scg:Dictionary>
@@ -230,7 +230,7 @@
                                 </State.Entry>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <av:Point x:Key="ShapeLocation">240,395</av:Point>
+                                    <av:Point x:Key="ShapeLocation">350,305</av:Point>
                                     <av:Size x:Key="ShapeSize">240,190</av:Size>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     <x:Double x:Key="StateContainerWidth">228</x:Double>
