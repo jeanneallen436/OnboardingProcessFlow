@@ -96,13 +96,13 @@
       <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Orchestrates onboarding, creates GitHub account, downloads VS Code" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1112,670.6566666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Orchestrates onboarding, creates GitHub account, downloads VS Code" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1112,631.6566666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <StateMachine InitialState="{x:Reference __ReferenceID0}" DisplayName="State Machine" sap:VirtualizedContainerService.HintSize="1112,671" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+    <StateMachine InitialState="{x:Reference __ReferenceID0}" DisplayName="State Machine" sap:VirtualizedContainerService.HintSize="1112,632" sap2010:WorkflowViewState.IdRef="StateMachine_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -114,7 +114,7 @@
       </sap:WorkflowViewStateService.ViewState>
       <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="Read out any necesary data" DisplayName="This is where it starts" sap:VirtualizedContainerService.HintSize="240,161" sap2010:WorkflowViewState.IdRef="State_1">
         <State.Entry>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Assignvariables - Invoke Workflow File (Assignvariables.xaml)" sap:VirtualizedContainerService.HintSize="334.4,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Assignvariables.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Assignvariables - Invoke Workflow File (Assignvariables.xaml)" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Assignvariables.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InOutArgument x:TypeArguments="x:String" x:Key="DummyEmail">[DummyEmail]</InOutArgument>
               <OutArgument x:TypeArguments="x:Boolean" x:Key="EmailIsValid">[EmailIsValid]</OutArgument>
@@ -136,7 +136,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <State.Exit>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Variables have been saved: &quot; + &quot;Username: &quot; + GitHubUsername.ToString + &quot;, Password: &quot; + GitHubPassword.ToString  + &quot;, Email: &quot; + DummyEmail.ToString]" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Variables have been saved: &quot; + &quot;Username: &quot; + GitHubUsername.ToString + &quot;, Password: &quot; + GitHubPassword.ToString  + &quot;, Email: &quot; + DummyEmail.ToString]" />
         </State.Exit>
         <State.Transitions>
           <Transition DisplayName="T1" sap:VirtualizedContainerService.HintSize="448.8,490.4" sap2010:WorkflowViewState.IdRef="Transition_1">
@@ -151,7 +151,7 @@
             <Transition.To>
               <State x:Name="__ReferenceID1" DisplayName="Create Github Account" sap:VirtualizedContainerService.HintSize="280,170" sap2010:WorkflowViewState.IdRef="State_2">
                 <State.Entry>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CreateGitHubAccount - Invoke Workflow File (CreateGitHubAccount.xaml)" sap:VirtualizedContainerService.HintSize="336.8,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="CreateGitHubAccount.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CreateGitHubAccount - Invoke Workflow File (CreateGitHubAccount.xaml)" sap:VirtualizedContainerService.HintSize="337,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="CreateGitHubAccount.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InOutArgument x:TypeArguments="x:String" x:Key="DummyEmail">[DummyEmail]</InOutArgument>
                       <InOutArgument x:TypeArguments="ss:SecureString" x:Key="GitHubPassword">[GitHubPassword]</InOutArgument>
@@ -169,7 +169,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <State.Exit>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="336.8,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;got an email! WooHoo!&quot;]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="337,143" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;got an email! WooHoo!&quot;]" />
                 </State.Exit>
                 <State.Transitions>
                   <Transition DisplayName="T2" sap2010:WorkflowViewState.IdRef="Transition_2">
@@ -181,7 +181,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <Transition.To>
-                      <State x:Name="__ReferenceID2" DisplayName="Download VS Code" sap:VirtualizedContainerService.HintSize="381,543" sap2010:WorkflowViewState.IdRef="State_3">
+                      <State x:Name="__ReferenceID2" DisplayName="Download VS Code" sap:VirtualizedContainerService.HintSize="260,180" sap2010:WorkflowViewState.IdRef="State_3">
                         <State.Entry>
                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DownloadVSCode - Invoke Workflow File (DownloadVSCode.xaml)" sap:VirtualizedContainerService.HintSize="335,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="DownloadVSCode.xaml">
                             <ui:InvokeWorkflowFile.Arguments>

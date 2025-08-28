@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="{x:Null}" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uasf="clr-namespace:UiPath.Activities.System.FileOperations;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="DownloadVSCode" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uasf="clr-namespace:UiPath.Activities.System.FileOperations;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -24,6 +24,12 @@
       <x:String>System.IO</x:String>
       <x:String>System.Net.Mail</x:String>
       <x:String>UiPath.Core</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Management.Automation</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.ComponentModel</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -82,21 +88,47 @@
       <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
       <AssemblyReference>System.Net.Requests</AssemblyReference>
       <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
-      <AssemblyReference>GlobalVariablesT1PNoYwrqg</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Management.Automation</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.Process</AssemblyReference>
+      <AssemblyReference>Microsoft.PowerShell.Commands.Diagnostics</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.FileVersionInfo</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.DiagnosticSource</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.TraceSource</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.EventLog</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.PerformanceCounter</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.TextWriterTraceListener</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence>
-    <Sequence DisplayName="Download VS Code" sap:VirtualizedContainerService.HintSize="450,349" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap:VirtualizedContainerService.HintSize="1106,719" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Download VS Code" sap:VirtualizedContainerService.HintSize="925,696" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:Boolean" Name="myVar" />
+      </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Downloading VS Code&quot;]" />
-      <uasf:DownloadFileFromUrl FileName="{x:Null}" ResponseAttachment="{x:Null}" Timeout="{x:Null}" UserAgentHeader="{x:Null}" ConflictResolution="Rename" DisplayName="Download File from URL" sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="DownloadFileFromUrl_1" Url="https://code.visualstudio.com/sha/download?build=stable&amp;os=win32-x64-user" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="891,175" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Downloading VS Code&quot;]" />
+      <uasf:DownloadFileFromUrl FileName="{x:Null}" ResponseAttachment="{x:Null}" Timeout="{x:Null}" UserAgentHeader="{x:Null}" ConflictResolution="Rename" DisplayName="Download File from URL" sap:VirtualizedContainerService.HintSize="891,123" sap2010:WorkflowViewState.IdRef="DownloadFileFromUrl_2" Url="https://code.visualstudio.com/sha/download?build=stable&amp;os=win32-x64-user" />
+      <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists" Exists="[myVar]" sap:VirtualizedContainerService.HintSize="891,149" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;AppData\Local\Programs\Microsoft VS Code\Code.exe&quot;)]" PathType="File" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="891,166" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Found VS code?  &quot;]" />
     </Sequence>
   </Sequence>
 </Activity>
