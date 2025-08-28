@@ -111,27 +111,27 @@
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="1466,3382" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap:VirtualizedContainerService.HintSize="1106,3544" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Assign variables" sap:VirtualizedContainerService.HintSize="574,3359" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Assign variables" sap:VirtualizedContainerService.HintSize="590,3521" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch DisplayName="Try Assigning inputs to variables" sap:VirtualizedContainerService.HintSize="540,3276" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch DisplayName="Try Assigning inputs to variables" sap:VirtualizedContainerService.HintSize="556,3438" sap2010:WorkflowViewState.IdRef="TryCatch_1">
         <TryCatch.Try>
-          <Sequence DisplayName="Try Assigning inputs to variables" sap:VirtualizedContainerService.HintSize="538,2795" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Try Assigning inputs to variables" sap:VirtualizedContainerService.HintSize="554,2957" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Assigning inputs to variables" sap:VirtualizedContainerService.HintSize="504,2735" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="Assigning inputs to variables" sap:VirtualizedContainerService.HintSize="520,2897" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="PasswordResult" />
                 <Variable x:TypeArguments="x:String" Name="GHPasswordConfirmation" />
@@ -141,24 +141,24 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:LogMessage DisplayName="Log Initialization" sap:VirtualizedContainerService.HintSize="470,175" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Initializing the process&quot;]" />
-              <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Enter Email" sap:VirtualizedContainerService.HintSize="470,275" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Enter Email" Title="Enter your email" TopMost="False">
+              <ui:LogMessage DisplayName="Log Initialization" sap:VirtualizedContainerService.HintSize="486,175" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Initializing the process&quot;]" />
+              <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Enter Email" sap:VirtualizedContainerService.HintSize="486,275" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Enter Email" Title="Enter your email" TopMost="False">
                 <ui:InputDialog.Result>
                   <OutArgument x:TypeArguments="x:String">[DummyEmail]</OutArgument>
                 </ui:InputDialog.Result>
               </ui:InputDialog>
-              <ui:IsMatch BuilderPattern="((?&gt;[a-zA-Z\d!#$%&amp;'*+\-\/=?^_`{|}~]+\x20*|&quot;((?=[\x01-\x7f])[^&quot;\\]|\\[\x01-\x7f])*&quot;\x20*)*(?&lt;angle&gt;&lt;))?((?!\.)(?&gt;\.?[a-zA-Z\d!#$%&amp;'*+\-\/=?^_`{|}~]+)+|&quot;((?=[\x01-\x7f])[^&quot;\\]|\\[\x01-\x7f])*&quot;)@(((?!-)[a-zA-Z\d\-]+(?&lt;!-)\.)+[a-zA-Z]{2,}|\[(((?(?&lt;!\[)\.)(25[0-5]|2[0-4]\d|[01]?\d?\d)){4}|[a-zA-Z\d\-]*[a-zA-Z\d]:((?=[\x01-\x7f])[^\\\[\]]|\\[\x01-\x7f])+)\])(?(angle)&gt;)" DisplayName="Is Email Valid" sap:VirtualizedContainerService.HintSize="470,92" sap2010:WorkflowViewState.IdRef="IsMatch_1" Input="[DummyEmail]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;EMAIL&quot;,&quot;OperationName&quot;:&quot;Email&quot;,&quot;OperationValue&quot;:&quot;((?&gt;[a-zA-Z\\d!#$%&amp;'*+\\-\\\/=?^_`{|}~]+\\x20*|\&quot;((?=[\\x01-\\x7f])[^\&quot;\\\\]|\\\\[\\x01-\\x7f])*\&quot;\\x20*)*(?&lt;angle&gt;&lt;))?((?!\\.)(?&gt;\\.?[a-zA-Z\\d!#$%&amp;'*+\\-\\\/=?^_`{|}~]+)+|\&quot;((?=[\\x01-\\x7f])[^\&quot;\\\\]|\\\\[\\x01-\\x7f])*\&quot;)@(((?!-)[a-zA-Z\\d\\-]+(?&lt;!-)\\.)+[a-zA-Z]{2,}|\\[(((?(?&lt;!\\[)\\.)(25[0-5]|2[0-4]\\d|[01]?\\d?\\d)){4}|[a-zA-Z\\d\\-]*[a-zA-Z\\d]:((?=[\\x01-\\x7f])[^\\\\\\[\\]]|\\\\[\\x01-\\x7f])+)\\])(?(angle)&gt;)&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="((?&gt;[a-zA-Z\d!#$%&amp;'*+\-\/=?^_`{|}~]+\x20*|&quot;((?=[\x01-\x7f])[^&quot;\\]|\\[\x01-\x7f])*&quot;\x20*)*(?&lt;angle&gt;&lt;))?((?!\.)(?&gt;\.?[a-zA-Z\d!#$%&amp;'*+\-\/=?^_`{|}~]+)+|&quot;((?=[\x01-\x7f])[^&quot;\\]|\\[\x01-\x7f])*&quot;)@(((?!-)[a-zA-Z\d\-]+(?&lt;!-)\.)+[a-zA-Z]{2,}|\[(((?(?&lt;!\[)\.)(25[0-5]|2[0-4]\d|[01]?\d?\d)){4}|[a-zA-Z\d\-]*[a-zA-Z\d]:((?=[\x01-\x7f])[^\\\[\]]|\\[\x01-\x7f])+)\])(?(angle)&gt;)" RegexOption="IgnoreCase, Compiled" Result="[EmailIsValid]" />
-              <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Enter Username" sap:VirtualizedContainerService.HintSize="470,275" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Enter Username" Title="Enter your GitHub Username" TopMost="False">
+              <ui:IsMatch BuilderPattern="((?&gt;[a-zA-Z\d!#$%&amp;'*+\-\/=?^_`{|}~]+\x20*|&quot;((?=[\x01-\x7f])[^&quot;\\]|\\[\x01-\x7f])*&quot;\x20*)*(?&lt;angle&gt;&lt;))?((?!\.)(?&gt;\.?[a-zA-Z\d!#$%&amp;'*+\-\/=?^_`{|}~]+)+|&quot;((?=[\x01-\x7f])[^&quot;\\]|\\[\x01-\x7f])*&quot;)@(((?!-)[a-zA-Z\d\-]+(?&lt;!-)\.)+[a-zA-Z]{2,}|\[(((?(?&lt;!\[)\.)(25[0-5]|2[0-4]\d|[01]?\d?\d)){4}|[a-zA-Z\d\-]*[a-zA-Z\d]:((?=[\x01-\x7f])[^\\\[\]]|\\[\x01-\x7f])+)\])(?(angle)&gt;)" DisplayName="Is Email Valid" sap:VirtualizedContainerService.HintSize="486,92" sap2010:WorkflowViewState.IdRef="IsMatch_1" Input="[DummyEmail]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;EMAIL&quot;,&quot;OperationName&quot;:&quot;Email&quot;,&quot;OperationValue&quot;:&quot;((?&gt;[a-zA-Z\\d!#$%&amp;'*+\\-\\\/=?^_`{|}~]+\\x20*|\&quot;((?=[\\x01-\\x7f])[^\&quot;\\\\]|\\\\[\\x01-\\x7f])*\&quot;\\x20*)*(?&lt;angle&gt;&lt;))?((?!\\.)(?&gt;\\.?[a-zA-Z\\d!#$%&amp;'*+\\-\\\/=?^_`{|}~]+)+|\&quot;((?=[\\x01-\\x7f])[^\&quot;\\\\]|\\\\[\\x01-\\x7f])*\&quot;)@(((?!-)[a-zA-Z\\d\\-]+(?&lt;!-)\\.)+[a-zA-Z]{2,}|\\[(((?(?&lt;!\\[)\\.)(25[0-5]|2[0-4]\\d|[01]?\\d?\\d)){4}|[a-zA-Z\\d\\-]*[a-zA-Z\\d]:((?=[\\x01-\\x7f])[^\\\\\\[\\]]|\\\\[\\x01-\\x7f])+)\\])(?(angle)&gt;)&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="((?&gt;[a-zA-Z\d!#$%&amp;'*+\-\/=?^_`{|}~]+\x20*|&quot;((?=[\x01-\x7f])[^&quot;\\]|\\[\x01-\x7f])*&quot;\x20*)*(?&lt;angle&gt;&lt;))?((?!\.)(?&gt;\.?[a-zA-Z\d!#$%&amp;'*+\-\/=?^_`{|}~]+)+|&quot;((?=[\x01-\x7f])[^&quot;\\]|\\[\x01-\x7f])*&quot;)@(((?!-)[a-zA-Z\d\-]+(?&lt;!-)\.)+[a-zA-Z]{2,}|\[(((?(?&lt;!\[)\.)(25[0-5]|2[0-4]\d|[01]?\d?\d)){4}|[a-zA-Z\d\-]*[a-zA-Z\d]:((?=[\x01-\x7f])[^\\\[\]]|\\[\x01-\x7f])+)\])(?(angle)&gt;)" RegexOption="IgnoreCase, Compiled" Result="[EmailIsValid]" />
+              <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Enter Username" sap:VirtualizedContainerService.HintSize="486,275" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Enter Username" Title="Enter your GitHub Username" TopMost="False">
                 <ui:InputDialog.Result>
                   <OutArgument x:TypeArguments="x:String">[GitHubUsername]</OutArgument>
                 </ui:InputDialog.Result>
               </ui:InputDialog>
-              <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Enter Password" sap:VirtualizedContainerService.HintSize="470,275" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="True" Label="Enter Password" Title="Enter your GitHub Password" TopMost="False">
+              <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Enter Password" sap:VirtualizedContainerService.HintSize="486,275" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="True" Label="Enter Password" Title="Enter your GitHub Password" TopMost="False">
                 <ui:InputDialog.Result>
                   <OutArgument x:TypeArguments="x:String">[PasswordResult]</OutArgument>
                 </ui:InputDialog.Result>
               </ui:InputDialog>
-              <Assign DisplayName="Assign Password Result to Secure String GitHubPassword" sap:VirtualizedContainerService.HintSize="470,115" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign DisplayName="Assign Password Result to Secure String GitHubPassword" sap:VirtualizedContainerService.HintSize="486,115" sap2010:WorkflowViewState.IdRef="Assign_1">
                 <Assign.To>
                   <OutArgument x:TypeArguments="ss:SecureString">[GitHubPassword]</OutArgument>
                 </Assign.To>
@@ -166,9 +166,20 @@
                   <InArgument x:TypeArguments="ss:SecureString">[New System.Net.NetworkCredential("", PasswordResult).SecurePassword]</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:ReadRange DataTable="{x:Null}" Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="470,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="test" WorkbookPath="test" />
-              <ui:LogMessage DisplayName="Log GitHubPassword" sap:VirtualizedContainerService.HintSize="470,175" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[GitHubPassword]" />
-              <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Confirm Password" sap:VirtualizedContainerService.HintSize="470,275" sap2010:WorkflowViewState.IdRef="InputDialog_4" IsPassword="True" Label="Confirm Password" Title="Confirm your GitHub Password" TopMost="False">
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,282" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                <ui:CommentOut.Body>
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,171" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:ReadRange DataTable="{x:Null}" Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="416,111" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="test" WorkbookPath="test" />
+                  </Sequence>
+                </ui:CommentOut.Body>
+              </ui:CommentOut>
+              <ui:LogMessage DisplayName="Log GitHubPassword" sap:VirtualizedContainerService.HintSize="486,175" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[GitHubPassword]" />
+              <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Confirm Password" sap:VirtualizedContainerService.HintSize="486,275" sap2010:WorkflowViewState.IdRef="InputDialog_4" IsPassword="True" Label="Confirm Password" Title="Confirm your GitHub Password" TopMost="False">
                 <ui:InputDialog.Result>
                   <OutArgument x:TypeArguments="x:String">[GHPasswordConfirmation]</OutArgument>
                 </ui:InputDialog.Result>
@@ -179,7 +190,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:InputDialog>
-              <Assign DisplayName="Assign GHPasswordConfirmation to PasswordConfirmation" sap:VirtualizedContainerService.HintSize="470,115" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign DisplayName="Assign GHPasswordConfirmation to PasswordConfirmation" sap:VirtualizedContainerService.HintSize="486,115" sap2010:WorkflowViewState.IdRef="Assign_2">
                 <Assign.To>
                   <OutArgument x:TypeArguments="ss:SecureString">[PasswordConfirmation]</OutArgument>
                 </Assign.To>
@@ -187,7 +198,7 @@
                   <InArgument x:TypeArguments="ss:SecureString">[New System.Net.NetworkCredential("", GHPasswordConfirmation).SecurePassword]</InArgument>
                 </Assign.Value>
               </Assign>
-              <If Condition="[New System.Net.NetworkCredential(&quot;&quot;, GitHubPassword).Password = New System.Net.NetworkCredential(&quot;&quot;, PasswordConfirmation).Password]" DisplayName="If GitHubPassword and ConfirmPassword match" sap:VirtualizedContainerService.HintSize="470,760" sap2010:WorkflowViewState.IdRef="If_1">
+              <If Condition="[New System.Net.NetworkCredential(&quot;&quot;, GitHubPassword).Password = New System.Net.NetworkCredential(&quot;&quot;, PasswordConfirmation).Password]" DisplayName="If GitHubPassword and ConfirmPassword match" sap:VirtualizedContainerService.HintSize="486,760" sap2010:WorkflowViewState.IdRef="If_1">
                 <If.Then>
                   <Sequence DisplayName="Then log successful match" sap:VirtualizedContainerService.HintSize="468,341" sap2010:WorkflowViewState.IdRef="Sequence_4">
                     <sap:WorkflowViewStateService.ViewState>
@@ -234,19 +245,19 @@
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="538,226" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="554,226" sap2010:WorkflowViewState.IdRef="Sequence_7">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:LogMessage DisplayName="Log Error" sap:VirtualizedContainerService.HintSize="504,166" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Fatal" Message="[&quot;An error has occurred&quot;]" />
+                <ui:LogMessage DisplayName="Log Error" sap:VirtualizedContainerService.HintSize="520,166" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Fatal" Message="[&quot;An error has occurred&quot;]" />
               </Sequence>
             </ActivityAction>
           </Catch>
         </TryCatch.Catches>
         <TryCatch.Finally>
-          <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="536,89.6" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="554,90" sap2010:WorkflowViewState.IdRef="Sequence_8">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
