@@ -110,15 +110,15 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="1106,719" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap:VirtualizedContainerService.HintSize="1106,1198" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Download VS Code" sap:VirtualizedContainerService.HintSize="925,696" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Download VS Code" sap:VirtualizedContainerService.HintSize="925,1175" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
-        <Variable x:TypeArguments="x:Boolean" Name="myVar" />
+        <Variable x:TypeArguments="x:Boolean" Name="vsCodeExists" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -127,8 +127,30 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="891,175" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Downloading VS Code&quot;]" />
       <uasf:DownloadFileFromUrl FileName="{x:Null}" ResponseAttachment="{x:Null}" Timeout="{x:Null}" UserAgentHeader="{x:Null}" ConflictResolution="Rename" DisplayName="Download File from URL" sap:VirtualizedContainerService.HintSize="891,123" sap2010:WorkflowViewState.IdRef="DownloadFileFromUrl_2" Url="https://code.visualstudio.com/sha/download?build=stable&amp;os=win32-x64-user" />
-      <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists" Exists="[myVar]" sap:VirtualizedContainerService.HintSize="891,149" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;AppData\Local\Programs\Microsoft VS Code\Code.exe&quot;)]" PathType="File" />
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="891,166" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Found VS code?  &quot;]" />
+      <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists" Exists="[vsCodeExists]" sap:VirtualizedContainerService.HintSize="891,149" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;AppData\Local\Programs\Microsoft VS Code\Code.exe&quot;)]" PathType="File" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="891,175" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Found VS code?  &quot; + vsCodeExists.ToString()]" />
+      <If Condition="[vsCodeExists]" sap:VirtualizedContainerService.HintSize="891,470" sap2010:WorkflowViewState.IdRef="If_1">
+        <If.Then>
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,169" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="416,109" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;VS Code already installed\nPath: &quot; + Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;AppData\Local\Programs\Microsoft VS Code\Code.exe&quot;)]" />
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,171" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:StartProcess Arguments="{x:Null}" FileName="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" sap:VirtualizedContainerService.HintSize="416,111" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
+          </Sequence>
+        </If.Else>
+      </If>
     </Sequence>
   </Sequence>
 </Activity>
