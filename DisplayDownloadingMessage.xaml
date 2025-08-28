@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="DownloadVSCode" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="DisplayDownloadingMessage" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -9,11 +9,12 @@
       <x:String>System.Collections.Generic</x:String>
       <x:String>System.Collections.ObjectModel</x:String>
       <x:String>UiPath.Core.Activities</x:String>
-      <x:String>System.Runtime.Serialization</x:String>
       <x:String>System.Reflection</x:String>
-      <x:String>System.Security</x:String>
       <x:String>UiPath.Activities.System.FileOperations</x:String>
       <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>UiPath.Activities.System.ProcessTracking</x:String>
+      <x:String>UiPath.Core.Activities.ProcessTracking</x:String>
       <x:String>System.Activities.Expressions</x:String>
       <x:String>System.Data</x:String>
       <x:String>System.Diagnostics</x:String>
@@ -21,18 +22,10 @@
       <x:String>System.Linq</x:String>
       <x:String>System.Xml</x:String>
       <x:String>System.Xml.Linq</x:String>
-      <x:String>System.IO</x:String>
       <x:String>System.Net.Mail</x:String>
       <x:String>UiPath.Core</x:String>
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
-      <x:String>System.Management.Automation</x:String>
-      <x:String>System.Dynamic</x:String>
-      <x:String>System.Linq.Expressions</x:String>
-      <x:String>System.ComponentModel</x:String>
-      <x:String>UiPath.Platform</x:String>
-      <x:String>UiPath.Activities.System.ProcessTracking</x:String>
-      <x:String>UiPath.Core.Activities.ProcessTracking</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -114,63 +107,12 @@
       <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="1106,1770" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap:VirtualizedContainerService.HintSize="1112,631.6566666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Download VS Code" sap:VirtualizedContainerService.HintSize="994,1747" sap2010:WorkflowViewState.IdRef="Sequence_2">
-      <Sequence.Variables>
-        <Variable x:TypeArguments="x:Boolean" Name="vsCodeExists" />
-        <Variable x:TypeArguments="upr:ILocalResource" Name="vsCodeExe">
-          <Variable.Default>
-            <VisualBasicValue x:TypeArguments="upr:ILocalResource" ExpressionText="Nothing" />
-          </Variable.Default>
-        </Variable>
-      </Sequence.Variables>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="960,175" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Downloading VS Code&quot;]" />
-      <Parallel sap:VirtualizedContainerService.HintSize="848,192" sap2010:WorkflowViewState.IdRef="Parallel_1">
-        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DisplayDownloadingMessage - Invoke Workflow File (DisplayDownloadingMessage.xaml)" sap:VirtualizedContainerService.HintSize="376,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="True" WorkflowFileName="DisplayDownloadingMessage.xaml">
-          <ui:InvokeWorkflowFile.Arguments>
-            <scg:Dictionary x:TypeArguments="x:String, Argument" />
-          </ui:InvokeWorkflowFile.Arguments>
-        </ui:InvokeWorkflowFile>
-        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DoActualDownload - Invoke Workflow File (DoActualDownload.xaml)" sap:VirtualizedContainerService.HintSize="378,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="True" WorkflowFileName="DoActualDownload.xaml">
-          <ui:InvokeWorkflowFile.Arguments>
-            <OutArgument x:TypeArguments="upr:ILocalResource" x:Key="vsCodeExe">[vsCodeExe]</OutArgument>
-          </ui:InvokeWorkflowFile.Arguments>
-        </ui:InvokeWorkflowFile>
-      </Parallel>
-      <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists" Exists="[vsCodeExists]" sap:VirtualizedContainerService.HintSize="960,149" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;AppData\Local\Programs\Microsoft VS Code\Code.exe&quot;)]" PathType="File" />
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="960,175" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Found VS code?  &quot; + vsCodeExists.ToString()]" />
-      <If Condition="[vsCodeExists]" sap:VirtualizedContainerService.HintSize="960,470" sap2010:WorkflowViewState.IdRef="If_1">
-        <If.Then>
-          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,169" sap2010:WorkflowViewState.IdRef="Sequence_3">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="416,109" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;VS Code already installed\nPath: &quot; + Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;AppData\Local\Programs\Microsoft VS Code\Code.exe&quot;)]" />
-          </Sequence>
-        </If.Then>
-        <If.Else>
-          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,171" sap2010:WorkflowViewState.IdRef="Sequence_4">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="[vsCodeExe.LocalPath]" sap:VirtualizedContainerService.HintSize="416,111" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
-          </Sequence>
-        </If.Else>
-      </If>
-    </Sequence>
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:01:10" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="450,109" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[&quot;Downloading....Please Wait&quot;]" TopMost="True" />
   </Sequence>
 </Activity>
