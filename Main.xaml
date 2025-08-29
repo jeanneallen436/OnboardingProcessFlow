@@ -98,19 +98,19 @@
       <AssemblyReference>NPOI.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Orchestrates onboarding, creates GitHub account, downloads VS Code" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1472,817.6566666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Orchestrates onboarding, creates GitHub account, downloads VS Code" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1085.6000000000001,698.0566666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <StateMachine InitialState="{x:Reference __ReferenceID0}" DisplayName="State Machine" sap:VirtualizedContainerService.HintSize="1472,818" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+    <StateMachine InitialState="{x:Reference __ReferenceID0}" DisplayName="State Machine" sap:VirtualizedContainerService.HintSize="1681,818" sap2010:WorkflowViewState.IdRef="StateMachine_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <av:Point x:Key="ShapeLocation">65,45</av:Point>
           <x:Double x:Key="StateContainerWidth">1390</x:Double>
-          <x:Double x:Key="StateContainerHeight">735</x:Double>
+          <x:Double x:Key="StateContainerHeight">735.4</x:Double>
           <av:PointCollection x:Key="ConnectorLocation">115,70 145,70 145,60.25 180,60.25</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -134,7 +134,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <State.Exit>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Variables have been saved: &quot; + &quot;Username: &quot; + GitHubUsername.ToString + &quot;, Password: &quot; + GitHubPassword.ToString  + &quot;, Email: &quot; + DummyEmail.ToString]" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Email saved as: &quot; + DummyEmail]" />
         </State.Exit>
         <State.Transitions>
           <Transition DisplayName="T4" sap:VirtualizedContainerService.HintSize="450,494" sap2010:WorkflowViewState.IdRef="Transition_4">
@@ -148,9 +148,10 @@
             <Transition.To>
               <x:Reference>__ReferenceID0</x:Reference>
             </Transition.To>
-            <Transition.Condition>
-              <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="Not EmailIsValid" />
-            </Transition.Condition>
+            <Transition.Action>
+              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="347,86" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[&quot;Please enter a valid email&quot;]" />
+            </Transition.Action>
+            <Transition.Condition>[Not EmailIsValid]</Transition.Condition>
           </Transition>
           <Transition DisplayName="T1" sap:VirtualizedContainerService.HintSize="450,494" sap2010:WorkflowViewState.IdRef="Transition_1">
             <sap:WorkflowViewStateService.ViewState>
@@ -160,9 +161,7 @@
                 <x:Int32 x:Key="DestConnectionPointIndex">34</x:Int32>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Transition.Condition>
-              <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="EmailIsValid" />
-            </Transition.Condition>
+            <Transition.Condition>[EmailIsValid]</Transition.Condition>
             <Transition.To>
               <State x:Name="__ReferenceID5" sap2010:Annotation.AnnotationText="Assign Username Variable here" DisplayName="Create Username Variable" sap:VirtualizedContainerService.HintSize="260,141" sap2010:WorkflowViewState.IdRef="State_5">
                 <State.Entry>
@@ -227,9 +226,7 @@
                                 <x:Int32 x:Key="DestConnectionPointIndex">29</x:Int32>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Transition.Condition>
-                              <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="PasswordsMatch and IsValidPassword" />
-                            </Transition.Condition>
+                            <Transition.Condition>[PasswordsMatch and IsValidPassword]</Transition.Condition>
                             <Transition.To>
                               <State x:Name="__ReferenceID2" DisplayName="Create Github Account" sap:VirtualizedContainerService.HintSize="280,170" sap2010:WorkflowViewState.IdRef="State_2">
                                 <State.Entry>
@@ -251,7 +248,7 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <State.Exit>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="337,143" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;got an email! WooHoo!&quot;]" />
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="337,143" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Waiting for verification&quot;]" />
                                 </State.Exit>
                                 <State.Transitions>
                                   <Transition DisplayName="T2" sap:VirtualizedContainerService.HintSize="448.8,490.4" sap2010:WorkflowViewState.IdRef="Transition_2">
@@ -328,9 +325,7 @@
                             <Transition.To>
                               <x:Reference>__ReferenceID1</x:Reference>
                             </Transition.To>
-                            <Transition.Condition>
-                              <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="Not PasswordsMatch or Not IsValidPassword" />
-                            </Transition.Condition>
+                            <Transition.Condition>[Not PasswordsMatch or Not IsValidPassword]</Transition.Condition>
                           </Transition>
                         </State.Transitions>
                       </State>
