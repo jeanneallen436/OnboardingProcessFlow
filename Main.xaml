@@ -27,8 +27,6 @@
       <x:String>System.Runtime.Serialization</x:String>
       <x:String>System.Reflection</x:String>
       <x:String>System.Text.RegularExpressions</x:String>
-      <x:String>GlobalVariablesNamespace</x:String>
-      <x:String>GlobalConstantsNamespace</x:String>
       <x:String>System.Activities.Runtime.Collections</x:String>
       <x:String>System.Security</x:String>
       <x:String>UiPath.UIAutomationCore.Contracts</x:String>
@@ -36,6 +34,8 @@
       <x:String>System.Net</x:String>
       <x:String>UiPath.Activities.System.FileOperations</x:String>
       <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -94,40 +94,38 @@
       <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
       <AssemblyReference>System.Net.Requests</AssemblyReference>
       <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Orchestrates onboarding, creates GitHub account, downloads VS Code" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1112,631.6566666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Orchestrates onboarding, creates GitHub account, downloads VS Code" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1085.6000000000001,698.0566666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <StateMachine InitialState="{x:Reference __ReferenceID0}" DisplayName="State Machine" sap:VirtualizedContainerService.HintSize="1112,632" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+    <StateMachine InitialState="{x:Reference __ReferenceID0}" DisplayName="State Machine" sap:VirtualizedContainerService.HintSize="1681,818" sap2010:WorkflowViewState.IdRef="StateMachine_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <av:Point x:Key="ShapeLocation">285,35</av:Point>
-          <x:Double x:Key="StateContainerWidth">1120</x:Double>
-          <x:Double x:Key="StateContainerHeight">585</x:Double>
-          <av:PointCollection x:Key="ConnectorLocation">335,60 365,60 365,65.25 400,65.25</av:PointCollection>
+          <av:Point x:Key="ShapeLocation">65,45</av:Point>
+          <x:Double x:Key="StateContainerWidth">1390</x:Double>
+          <x:Double x:Key="StateContainerHeight">735.4</x:Double>
+          <av:PointCollection x:Key="ConnectorLocation">115,70 145,70 145,60.25 180,60.25</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="Read out any necesary data" DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="240,161" sap2010:WorkflowViewState.IdRef="State_1">
+      <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="Assign email variable here" DisplayName="Initialize - Assign Email Variable" sap:VirtualizedContainerService.HintSize="240,161" sap2010:WorkflowViewState.IdRef="State_1">
         <State.Entry>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Assignvariables - Invoke Workflow File (Assignvariables.xaml)" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Assignvariables.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InOutArgument x:TypeArguments="x:String" x:Key="DummyEmail">[DummyEmail]</InOutArgument>
               <OutArgument x:TypeArguments="x:Boolean" x:Key="EmailIsValid">[EmailIsValid]</OutArgument>
-              <OutArgument x:TypeArguments="x:String" x:Key="GitHubUsername">[GitHubUsername]</OutArgument>
-              <InOutArgument x:TypeArguments="ss:SecureString" x:Key="GitHubPassword">[GitHubPassword]</InOutArgument>
-              <InOutArgument x:TypeArguments="ss:SecureString" x:Key="PasswordConfirmation">[PasswordConfirmation]</InOutArgument>
-              <OutArgument x:TypeArguments="x:Boolean" x:Key="PasswordsMatch">[PasswordsMatch]</OutArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
         </State.Entry>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <av:Point x:Key="ShapeLocation">400,25</av:Point>
+            <av:Point x:Key="ShapeLocation">180,20</av:Point>
             <av:Size x:Key="ShapeSize">240,161</av:Size>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
             <x:Double x:Key="StateContainerWidth">228</x:Double>
@@ -136,13 +134,13 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <State.Exit>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Variables have been saved: &quot; + &quot;Username: &quot; + GitHubUsername.ToString + &quot;, Password: &quot; + GitHubPassword.ToString  + &quot;, Email: &quot; + DummyEmail.ToString]" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Email saved as: &quot; + DummyEmail]" />
         </State.Exit>
         <State.Transitions>
           <Transition DisplayName="T4" sap:VirtualizedContainerService.HintSize="450,494" sap2010:WorkflowViewState.IdRef="Transition_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <av:PointCollection x:Key="ConnectorLocation">604,185.8 604,215.8 436,215.8 436,185.8</av:PointCollection>
+                <av:PointCollection x:Key="ConnectorLocation">384,180.8 384,210.8 216,210.8 216,180.8</av:PointCollection>
                 <x:Int32 x:Key="SrcConnectionPointIndex">67</x:Int32>
                 <x:Int32 x:Key="DestConnectionPointIndex">11</x:Int32>
               </scg:Dictionary>
@@ -150,95 +148,184 @@
             <Transition.To>
               <x:Reference>__ReferenceID0</x:Reference>
             </Transition.To>
-            <Transition.Condition>[Not EmailIsValid or Not PasswordsMatch]</Transition.Condition>
+            <Transition.Action>
+              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="347,86" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[&quot;Please enter a valid email&quot;]" />
+            </Transition.Action>
+            <Transition.Condition>[Not EmailIsValid]</Transition.Condition>
           </Transition>
           <Transition DisplayName="T1" sap:VirtualizedContainerService.HintSize="450,494" sap2010:WorkflowViewState.IdRef="Transition_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <av:PointCollection x:Key="ConnectorLocation">640,105.5 670,105.5 670,43.5 840,43.5</av:PointCollection>
+                <av:PointCollection x:Key="ConnectorLocation">420,100.5 557,100.5 557,245</av:PointCollection>
                 <x:Int32 x:Key="SrcConnectionPointIndex">36</x:Int32>
-                <x:Int32 x:Key="DestConnectionPointIndex">1</x:Int32>
+                <x:Int32 x:Key="DestConnectionPointIndex">34</x:Int32>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Transition.Condition>[EmailIsValid and PasswordsMatch]</Transition.Condition>
+            <Transition.Condition>[EmailIsValid]</Transition.Condition>
             <Transition.To>
-              <State x:Name="__ReferenceID1" DisplayName="Create Github Account" sap:VirtualizedContainerService.HintSize="280,170" sap2010:WorkflowViewState.IdRef="State_2">
+              <State x:Name="__ReferenceID5" sap2010:Annotation.AnnotationText="Assign Username Variable here" DisplayName="Create Username Variable" sap:VirtualizedContainerService.HintSize="260,141" sap2010:WorkflowViewState.IdRef="State_5">
                 <State.Entry>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CreateGitHubAccount - Invoke Workflow File (CreateGitHubAccount.xaml)" sap:VirtualizedContainerService.HintSize="337,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="CreateGitHubAccount.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CreateAndSaveUsername - Invoke Workflow File (CreateAndSaveUsername.xaml)" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="CreateAndSaveUsername.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <InOutArgument x:TypeArguments="x:String" x:Key="DummyEmail">[DummyEmail]</InOutArgument>
-                      <InOutArgument x:TypeArguments="ss:SecureString" x:Key="GitHubPassword">[GitHubPassword]</InOutArgument>
-                      <InOutArgument x:TypeArguments="x:String" x:Key="GitHubUsername">[GitHubUsername]</InOutArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="GitHubUsername">[GitHubUsername]</OutArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
                 </State.Entry>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <av:Point x:Key="ShapeLocation">840,35</av:Point>
-                    <av:Size x:Key="ShapeSize">280,170</av:Size>
+                    <av:Point x:Key="ShapeLocation">440,245</av:Point>
+                    <av:Size x:Key="ShapeSize">260,141</av:Size>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    <x:Double x:Key="StateContainerWidth">268</x:Double>
-                    <x:Double x:Key="StateContainerHeight">138.6566666666667</x:Double>
+                    <x:Double x:Key="StateContainerWidth">248</x:Double>
+                    <x:Double x:Key="StateContainerHeight">78.65666666666672</x:Double>
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <State.Exit>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="337,143" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;got an email! WooHoo!&quot;]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_10" Message="[&quot;Username created as: &quot; + GitHubUsername]" />
                 </State.Exit>
                 <State.Transitions>
-                  <Transition DisplayName="T2" sap:VirtualizedContainerService.HintSize="448.8,490.4" sap2010:WorkflowViewState.IdRef="Transition_2">
+                  <Transition DisplayName="T5" sap2010:WorkflowViewState.IdRef="Transition_6">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <av:PointCollection x:Key="ConnectorLocation">980,205 980,235 910,235 910,360</av:PointCollection>
-                        <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
-                        <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
+                        <av:PointCollection x:Key="ConnectorLocation">700,294.35 730,294.35 730,301.15 760,301.15</av:PointCollection>
+                        <x:Int32 x:Key="SrcConnectionPointIndex">24</x:Int32>
+                        <x:Int32 x:Key="DestConnectionPointIndex">49</x:Int32>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <Transition.To>
-                      <State x:Name="__ReferenceID2" DisplayName="Download VS Code" sap:VirtualizedContainerService.HintSize="260,180" sap2010:WorkflowViewState.IdRef="State_3">
+                      <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="Assign Password variable here" DisplayName="Create Password Variable" sap:VirtualizedContainerService.HintSize="280,171" sap2010:WorkflowViewState.IdRef="State_6">
                         <State.Entry>
-                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DownloadVSCode - Invoke Workflow File (DownloadVSCode.xaml)" sap:VirtualizedContainerService.HintSize="335,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="DownloadVSCode.xaml">
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="EnterAndSavePassword - Invoke Workflow File (EnterAndSavePassword.xaml)" sap:VirtualizedContainerService.HintSize="337,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="EnterAndSavePassword.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
-                              <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                              <InOutArgument x:TypeArguments="ss:SecureString" x:Key="GitHubPassword" />
+                              <InOutArgument x:TypeArguments="ss:SecureString" x:Key="PasswordConfirmation" />
+                              <OutArgument x:TypeArguments="x:Boolean" x:Key="PasswordsMatch" />
                             </ui:InvokeWorkflowFile.Arguments>
                           </ui:InvokeWorkflowFile>
                         </State.Entry>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <av:Point x:Key="ShapeLocation">780,360</av:Point>
-                            <av:Size x:Key="ShapeSize">260,180</av:Size>
+                            <av:Point x:Key="ShapeLocation">760,190</av:Point>
+                            <av:Size x:Key="ShapeSize">280,171</av:Size>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            <x:Double x:Key="StateContainerWidth">248</x:Double>
-                            <x:Double x:Key="StateContainerHeight">148.65666666666675</x:Double>
+                            <x:Double x:Key="StateContainerWidth">268</x:Double>
+                            <x:Double x:Key="StateContainerHeight">108.65666666666675</x:Double>
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <State.Exit>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="335,143" sap2010:WorkflowViewState.IdRef="LogMessage_8" Message="[&quot;Done dowloading&quot;]" />
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="337,143" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Password is created and saved&quot;]" />
                         </State.Exit>
                         <State.Transitions>
-                          <Transition DisplayName="T3" sap2010:WorkflowViewState.IdRef="Transition_3">
+                          <Transition DisplayName="T6" sap:VirtualizedContainerService.HintSize="450,494" sap2010:WorkflowViewState.IdRef="Transition_5">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <av:PointCollection x:Key="ConnectorLocation">780,450 750,450 750,390.5 590,390.5</av:PointCollection>
-                                <x:Int32 x:Key="SrcConnectionPointIndex">37</x:Int32>
-                                <x:Int32 x:Key="DestConnectionPointIndex">32</x:Int32>
+                                <av:PointCollection x:Key="ConnectorLocation">970,190 970,113 1110,113</av:PointCollection>
+                                <x:Int32 x:Key="SrcConnectionPointIndex">58</x:Int32>
+                                <x:Int32 x:Key="DestConnectionPointIndex">29</x:Int32>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
+                            <Transition.Condition>[PasswordsMatch and IsValidPassword]</Transition.Condition>
                             <Transition.To>
-                              <State x:Name="__ReferenceID3" DisplayName="Onboarding Complete" sap:VirtualizedContainerService.HintSize="240,190" sap2010:WorkflowViewState.IdRef="State_4" IsFinal="True">
+                              <State x:Name="__ReferenceID2" DisplayName="Create Github Account" sap:VirtualizedContainerService.HintSize="280,170" sap2010:WorkflowViewState.IdRef="State_2">
                                 <State.Entry>
-                                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,86" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;Finished onboarding!!&quot;]" />
+                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CreateGitHubAccount - Invoke Workflow File (CreateGitHubAccount.xaml)" sap:VirtualizedContainerService.HintSize="337,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="CreateGitHubAccount.xaml">
+                                    <ui:InvokeWorkflowFile.Arguments>
+                                      <InOutArgument x:TypeArguments="x:String" x:Key="DummyEmail">[DummyEmail]</InOutArgument>
+                                      <InOutArgument x:TypeArguments="ss:SecureString" x:Key="GitHubPassword">[GitHubPassword]</InOutArgument>
+                                      <InOutArgument x:TypeArguments="x:String" x:Key="GitHubUsername">[GitHubUsername]</InOutArgument>
+                                    </ui:InvokeWorkflowFile.Arguments>
+                                  </ui:InvokeWorkflowFile>
                                 </State.Entry>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <av:Point x:Key="ShapeLocation">350,305</av:Point>
-                                    <av:Size x:Key="ShapeSize">240,190</av:Size>
+                                    <av:Point x:Key="ShapeLocation">1110,45</av:Point>
+                                    <av:Size x:Key="ShapeSize">280,170</av:Size>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                    <x:Double x:Key="StateContainerWidth">228</x:Double>
-                                    <x:Double x:Key="StateContainerHeight">158.65666666666675</x:Double>
+                                    <x:Double x:Key="StateContainerWidth">268</x:Double>
+                                    <x:Double x:Key="StateContainerHeight">138.6566666666667</x:Double>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
+                                <State.Exit>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="337,143" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Waiting for verification&quot;]" />
+                                </State.Exit>
+                                <State.Transitions>
+                                  <Transition DisplayName="T2" sap:VirtualizedContainerService.HintSize="448.8,490.4" sap2010:WorkflowViewState.IdRef="Transition_2">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <av:PointCollection x:Key="ConnectorLocation">1250,215 1250,245 1180,245 1180,550</av:PointCollection>
+                                        <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
+                                        <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Transition.To>
+                                      <State x:Name="__ReferenceID3" DisplayName="Download VS Code" sap:VirtualizedContainerService.HintSize="260,180" sap2010:WorkflowViewState.IdRef="State_3">
+                                        <State.Entry>
+                                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DownloadVSCode - Invoke Workflow File (DownloadVSCode.xaml)" sap:VirtualizedContainerService.HintSize="335,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="DownloadVSCode.xaml">
+                                            <ui:InvokeWorkflowFile.Arguments>
+                                              <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                                            </ui:InvokeWorkflowFile.Arguments>
+                                          </ui:InvokeWorkflowFile>
+                                        </State.Entry>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <av:Point x:Key="ShapeLocation">1050,550</av:Point>
+                                            <av:Size x:Key="ShapeSize">260,180</av:Size>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            <x:Double x:Key="StateContainerWidth">248</x:Double>
+                                            <x:Double x:Key="StateContainerHeight">148.65666666666675</x:Double>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <State.Exit>
+                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="335,143" sap2010:WorkflowViewState.IdRef="LogMessage_8" Message="[&quot;Done dowloading&quot;]" />
+                                        </State.Exit>
+                                        <State.Transitions>
+                                          <Transition DisplayName="T3" sap2010:WorkflowViewState.IdRef="Transition_3">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <av:PointCollection x:Key="ConnectorLocation">1050,640 1020,640 1020,630.5 310,630.5</av:PointCollection>
+                                                <x:Int32 x:Key="SrcConnectionPointIndex">37</x:Int32>
+                                                <x:Int32 x:Key="DestConnectionPointIndex">32</x:Int32>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <Transition.To>
+                                              <State x:Name="__ReferenceID4" DisplayName="Onboarding Complete" sap:VirtualizedContainerService.HintSize="240,190" sap2010:WorkflowViewState.IdRef="State_4" IsFinal="True">
+                                                <State.Entry>
+                                                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,86" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;Finished onboarding!!&quot;]" />
+                                                </State.Entry>
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <av:Point x:Key="ShapeLocation">70,545</av:Point>
+                                                    <av:Size x:Key="ShapeSize">240,190</av:Size>
+                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    <x:Double x:Key="StateContainerWidth">228</x:Double>
+                                                    <x:Double x:Key="StateContainerHeight">158.65666666666675</x:Double>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                              </State>
+                                            </Transition.To>
+                                          </Transition>
+                                        </State.Transitions>
+                                      </State>
+                                    </Transition.To>
+                                  </Transition>
+                                </State.Transitions>
                               </State>
                             </Transition.To>
+                          </Transition>
+                          <Transition DisplayName="T7" sap:VirtualizedContainerService.HintSize="450,494" sap2010:WorkflowViewState.IdRef="Transition_7">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <av:PointCollection x:Key="ConnectorLocation">998,361 998,391 816,391 816,361</av:PointCollection>
+                                <x:Int32 x:Key="SrcConnectionPointIndex">67</x:Int32>
+                                <x:Int32 x:Key="DestConnectionPointIndex">15</x:Int32>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Transition.To>
+                              <x:Reference>__ReferenceID1</x:Reference>
+                            </Transition.To>
+                            <Transition.Condition>[Not PasswordsMatch or Not IsValidPassword]</Transition.Condition>
                           </Transition>
                         </State.Transitions>
                       </State>
@@ -250,9 +337,11 @@
           </Transition>
         </State.Transitions>
       </State>
-      <x:Reference>__ReferenceID1</x:Reference>
       <x:Reference>__ReferenceID2</x:Reference>
       <x:Reference>__ReferenceID3</x:Reference>
+      <x:Reference>__ReferenceID4</x:Reference>
+      <x:Reference>__ReferenceID5</x:Reference>
+      <x:Reference>__ReferenceID1</x:Reference>
       <StateMachine.Variables>
         <Variable x:TypeArguments="ss:SecureString" Name="GitHubPassword" />
         <Variable x:TypeArguments="x:String" Name="GitHubUsername" />
