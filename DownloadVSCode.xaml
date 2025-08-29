@@ -40,6 +40,8 @@
       <x:String>UiPath.Shared.Activities</x:String>
       <x:String>UiPath.Platform.ObjectLibrary</x:String>
       <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -126,13 +128,13 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="1106,2403" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap:VirtualizedContainerService.HintSize="1106,4997" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Download VS Code" sap:VirtualizedContainerService.HintSize="925,2380" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Download VS Code" sap:VirtualizedContainerService.HintSize="925,4974" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Boolean" Name="vsCodeExists" />
         <Variable x:TypeArguments="upr:ILocalResource" Default="[Nothing]" Name="vsCodeExe" />
@@ -157,19 +159,19 @@
       </Parallel>
       <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists" Exists="[vsCodeExists]" sap:VirtualizedContainerService.HintSize="891,149" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;AppData\Local\Programs\Microsoft VS Code\Code.exe&quot;)]" PathType="File" />
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="891,175" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Found VS code?  &quot; + vsCodeExists.ToString()]" />
-      <If Condition="[vsCodeExists]" sap:VirtualizedContainerService.HintSize="891,1574" sap2010:WorkflowViewState.IdRef="If_1">
+      <If Condition="[vsCodeExists]" sap:VirtualizedContainerService.HintSize="891,4168" sap2010:WorkflowViewState.IdRef="If_1">
         <If.Then>
-          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="554,169" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="694,169" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="520,109" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;VS Code already installed\nPath: &quot; + Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;AppData\Local\Programs\Microsoft VS Code\Code.exe&quot;)]" />
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="660,109" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;VS Code already installed\nPath: &quot; + Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;AppData\Local\Programs\Microsoft VS Code\Code.exe&quot;)]" />
           </Sequence>
         </If.Then>
         <If.Else>
-          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="554,1275" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="694,3869" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="tempDir" />
               <Variable x:TypeArguments="x:String" Name="generatedTempDir" />
@@ -179,15 +181,15 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="520,707" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="660,707" sap2010:WorkflowViewState.IdRef="CommentOut_4">
               <ui:CommentOut.Body>
-                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="484,596" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="484,596" sap2010:WorkflowViewState.IdRef="Sequence_20">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="Install vs code via setup wizard using path to setup wizard" sap:VirtualizedContainerService.HintSize="450,536" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <Sequence DisplayName="Install vs code via setup wizard using path to setup wizard" sap:VirtualizedContainerService.HintSize="450,536" sap2010:WorkflowViewState.IdRef="Sequence_19">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -301,14 +303,8 @@
                   </Sequence>
                 </Sequence>
               </ui:CommentOut.Body>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
             </ui:CommentOut>
-            <Sequence sap:VirtualizedContainerService.HintSize="520,508" sap2010:WorkflowViewState.IdRef="Sequence_11">
+            <Sequence sap:VirtualizedContainerService.HintSize="660,3102" sap2010:WorkflowViewState.IdRef="Sequence_11">
               <Sequence.Variables>
                 <Variable x:TypeArguments="ui:UiElement" Name="winSetupWizard" />
               </Sequence.Variables>
@@ -317,7 +313,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="C:\Users\jeanne.allen\Downloads\vs_code.exe" sap:VirtualizedContainerService.HintSize="416,120" sap2010:WorkflowViewState.IdRef="StartProcess_3">
+              <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="[vsCodeExe.LocalPath]" sap:VirtualizedContainerService.HintSize="626,120" sap2010:WorkflowViewState.IdRef="StartProcess_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -325,9 +321,9 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:StartProcess>
-              <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'vs_code.tmp Setup'" FoundElement="[winSetupWizard]" sap:VirtualizedContainerService.HintSize="416,139" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
+              <ui:WaitUiElementAppear WaitActive="{x:Null}" DisplayName="Find Element 'vs_code.tmp Setup'" FoundElement="[winSetupWizard]" sap:VirtualizedContainerService.HintSize="626,139" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1" WaitVisible="True">
                 <ui:WaitUiElementAppear.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="41e87918-96ba-449f-8bb0-cf5300dedc29" InformativeScreenshot="26b6ce8bf1b386a5bc642ac3fc165ab2" Selector="&lt;wnd app='vs_code.tmp' cls='TWizardForm' title='Setup - Microsoft Visual Studio Code (User)' /&gt;">
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="41e87918-96ba-449f-8bb0-cf5300dedc29" InformativeScreenshot="26b6ce8bf1b386a5bc642ac3fc165ab2" Selector="&lt;wnd app='vs_code.tmp' cls='TWizardForm' title='Setup*Visual Studio Code*' /&gt;">
                     <ui:Target.TimeoutMS>
                       <InArgument x:TypeArguments="x:Int32" />
                     </ui:Target.TimeoutMS>
@@ -337,7 +333,401 @@
                   </ui:Target>
                 </ui:WaitUiElementAppear.Target>
               </ui:WaitUiElementAppear>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_13" Message="[winSetupWizard]" />
+              <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="626,2760" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InUiElement="[winSetupWizard]" IsDisplayNameAuto="True" ScopeGuid="35336ffe-cc5a-445d-b4a7-7531a9525d2f" Version="V2">
+                <uix:NApplicationCard.Body>
+                  <ActivityAction x:TypeArguments="x:Object">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="592,2599" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:String" Name="userSelection" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="YesNo" ChosenButton="[userSelection]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="558,118" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;Ready to install VS Code. Use Defaults?&quot;]" />
+                      <If Condition="[userSelection = &quot;Yes&quot;]" sap:VirtualizedContainerService.HintSize="558,2419" sap2010:WorkflowViewState.IdRef="If_2">
+                        <If.Then>
+                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="556,2120" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Sequence DisplayName="Run Install Wizard" sap:VirtualizedContainerService.HintSize="522,2060" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                              <Sequence.Variables>
+                                <Variable x:TypeArguments="x:String" Name="yesInstall" />
+                              </Sequence.Variables>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'License Agreement'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="488,57" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="35336ffe-cc5a-445d-b4a7-7531a9525d2f" Version="V5">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable CVScreenId="99fda9a8-a43c-4fcc-8717-6fba4ca33143" ContentHash="PKu6J8nwlkKJqSG_K_hi3A" CvElementArea="44, 366, 16, 16" CvTextArea="60, 369, 108, 12" CvTextArgument="I accept the agreement" CvType="RadioButton" DesignTimeRectangle="45, 365, 482, 17" ElementType="RadioButton" FullSelectorArgument="&lt;wnd aaname='I accept the agreement' cls='TNewRadioButton' title='I &amp;amp;accept the agreement' /&gt;" Guid="b927287c-30f3-47c6-baff-45f231ef1b38" InformativeScreenshot="2fb81fb2594c596c20d30a0599de2d73.png" Reference="MqAZYQWN90eP4u4a7JMSuw/pBrYu8XiSkKfNo7kqy9eEw" ScopeSelectorArgument="&lt;wnd app='vs_code.tmp' cls='TWizardForm' title='Setup - Microsoft Visual Studio Code (User)' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                        <uix:Target CVScreenId="99fda9a8-a43c-4fcc-8717-6fba4ca33143" CvTextArea="29, 41, 102, 13" CvTextArgument="License Agreement" CvType="Text" DesignTimeRectangle="29, 40, 469, 14" ElementType="Text" FuzzySelectorArgument="&lt;wnd cls='TNewStaticText' title='License Agreement' matching:title='fuzzy' fuzzylevel:title='0.0' check:text='License Agreement' /&gt;" Guid="5d13d7f7-b47c-4312-a530-d495072676cf" SearchSteps="FuzzySelector, CV" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NClick.Target>
+                                <uix:NClick.VerifyOptions>
+                                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                    <uix:VerifyExecutionOptions.Retry>
+                                      <InArgument x:TypeArguments="x:Boolean" />
+                                    </uix:VerifyExecutionOptions.Retry>
+                                    <uix:VerifyExecutionOptions.Timeout>
+                                      <InArgument x:TypeArguments="x:Double" />
+                                    </uix:VerifyExecutionOptions.Timeout>
+                                  </uix:VerifyExecutionOptions>
+                                </uix:NClick.VerifyOptions>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </uix:NClick>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '&amp;Next'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="488,57" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="35336ffe-cc5a-445d-b4a7-7531a9525d2f" Version="V5">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable CVScreenId="35880e8d-891e-44b0-aadb-4f9a0b4b63fa" ContentHash="1Ah8ajk7vkuKNvitXYq0uw" CvElementArea="405, 423, 70, 23" CvTextArea="429, 430, 21, 10" CvTextArgument="Next" CvType="Button" DesignTimeRectangle="404, 423, 70, 22" ElementType="Button" FullSelectorArgument="&lt;wnd aaname='Next' cls='TNewButton' title='&amp;amp;Next' /&gt;" Guid="de5519d0-4b3a-406f-9bf5-28dbd404c2d1" InformativeScreenshot="666b52007999d141f9279954bbb4d3fc.png" Reference="MqAZYQWN90eP4u4a7JMSuw/qNfJlS48tU6PBER5arH9Ig" ScopeSelectorArgument="&lt;wnd app='vs_code.tmp' cls='TWizardForm' title='Setup - Microsoft Visual Studio Code (User)' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                        <uix:Target CVScreenId="35880e8d-891e-44b0-aadb-4f9a0b4b63fa" CvTextArea="30, 41, 101, 13" CvTextArgument="License Agreement" CvType="Text" DesignTimeRectangle="29, 40, 469, 14" ElementType="Text" FuzzySelectorArgument="&lt;wnd cls='TNewStaticText' title='License Agreement' matching:title='fuzzy' fuzzylevel:title='0.0' check:text='License Agreement' /&gt;" Guid="9cc8cd66-8c2e-4f19-86c2-b2781cbb3ebf" SearchSteps="FuzzySelector, CV" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NClick.Target>
+                                <uix:NClick.VerifyOptions>
+                                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                    <uix:VerifyExecutionOptions.Retry>
+                                      <InArgument x:TypeArguments="x:Boolean" />
+                                    </uix:VerifyExecutionOptions.Retry>
+                                    <uix:VerifyExecutionOptions.Timeout>
+                                      <InArgument x:TypeArguments="x:Double" />
+                                    </uix:VerifyExecutionOptions.Timeout>
+                                  </uix:VerifyExecutionOptions>
+                                </uix:NClick.VerifyOptions>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </uix:NClick>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '&amp;Next(1)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="488,57" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="35336ffe-cc5a-445d-b4a7-7531a9525d2f" Version="V5">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable CVScreenId="05a3a08f-2c3b-443d-a9b8-94826d3a8ddf" ContentHash="QJhy-S_ruUCHjVhDUbTfvw" CvElementArea="405, 423, 70, 23" CvTextArea="429, 430, 21, 10" CvTextArgument="Next" CvType="Button" DesignTimeRectangle="404, 423, 70, 22" ElementType="Button" FullSelectorArgument="&lt;wnd aaname='Next' cls='TNewButton' title='&amp;amp;Next' /&gt;" Guid="fe32dd11-596e-486f-be17-34e4f682c81f" InformativeScreenshot="8be9c950218f75c1f512aef78cd190e5.png" Reference="MqAZYQWN90eP4u4a7JMSuw/bmlfUvTYrUKXUCbPdmrWMA" ScopeSelectorArgument="&lt;wnd app='vs_code.tmp' cls='TWizardForm' title='Setup - Microsoft Visual Studio Code (User)' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                        <uix:Target CVScreenId="05a3a08f-2c3b-443d-a9b8-94826d3a8ddf" CvTextArea="29, 41, 143, 11" CvTextArgument="Select Destination Location" CvType="Text" DesignTimeRectangle="29, 40, 469, 14" ElementType="Text" FuzzySelectorArgument="&lt;wnd cls='TNewStaticText' title='Select Destination Location' matching:title='fuzzy' fuzzylevel:title='0.0' check:text='Select Destination Location' /&gt;" Guid="3a6b80b9-39a3-454e-aea3-6360cfddff55" SearchSteps="FuzzySelector, CV" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NClick.Target>
+                                <uix:NClick.VerifyOptions>
+                                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                    <uix:VerifyExecutionOptions.Retry>
+                                      <InArgument x:TypeArguments="x:Boolean" />
+                                    </uix:VerifyExecutionOptions.Retry>
+                                    <uix:VerifyExecutionOptions.Timeout>
+                                      <InArgument x:TypeArguments="x:Double" />
+                                    </uix:VerifyExecutionOptions.Timeout>
+                                  </uix:VerifyExecutionOptions>
+                                </uix:NClick.VerifyOptions>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </uix:NClick>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '&amp;Next(2)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="488,57" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="35336ffe-cc5a-445d-b4a7-7531a9525d2f" Version="V5">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable CVScreenId="132478f3-b5d5-4407-934a-65636c9e5f1a" ContentHash="QFzyDcRd30a3DGyD7gWjAQ" CvElementArea="405, 423, 70, 23" CvTextArea="429, 430, 21, 10" CvTextArgument="Next" CvType="Button" DesignTimeRectangle="404, 423, 70, 22" ElementType="Button" FullSelectorArgument="&lt;wnd aaname='Next' cls='TNewButton' title='&amp;amp;Next' /&gt;" Guid="8ead7435-065f-444f-93e2-d97828249e69" InformativeScreenshot="55ae52d3e497171ede2f779c2bd8980d.png" Reference="MqAZYQWN90eP4u4a7JMSuw/rgywPyddwUK7j7aNVFcwyg" ScopeSelectorArgument="&lt;wnd app='vs_code.tmp' cls='TWizardForm' title='Setup - Microsoft Visual Studio Code (User)' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                        <uix:Target CVScreenId="132478f3-b5d5-4407-934a-65636c9e5f1a" CvTextArea="29, 41, 130, 11" CvTextArgument="Select Start Menu Folder" CvType="Text" DesignTimeRectangle="29, 40, 469, 14" ElementType="Text" FuzzySelectorArgument="&lt;wnd cls='TNewStaticText' title='Select Start Menu Folder' matching:title='fuzzy' fuzzylevel:title='0.0' check:text='Select Start Menu Folder' /&gt;" Guid="ca641baa-8878-4cfb-8e8b-d207f73e652b" SearchSteps="FuzzySelector, CV" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NClick.Target>
+                                <uix:NClick.VerifyOptions>
+                                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                    <uix:VerifyExecutionOptions.Retry>
+                                      <InArgument x:TypeArguments="x:Boolean" />
+                                    </uix:VerifyExecutionOptions.Retry>
+                                    <uix:VerifyExecutionOptions.Timeout>
+                                      <InArgument x:TypeArguments="x:Double" />
+                                    </uix:VerifyExecutionOptions.Timeout>
+                                  </uix:VerifyExecutionOptions>
+                                </uix:NClick.VerifyOptions>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </uix:NClick>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Select Additional Tasks'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="488,57" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="35336ffe-cc5a-445d-b4a7-7531a9525d2f" Version="V5">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable CVScreenId="6cff4166-5a73-404e-b0ca-9bf5981d9371" ContentHash="RRHrJf64w0miG-l4PhVYtg" CvElementArea="47, 165, 15, 15" CvTextArea="65, 167, 100, 10" CvTextArgument="Create a desktop icon" CvType="CheckBox" DesignTimeRectangle="45, 160, 482, 23" ElementType="CheckBox" FullSelectorArgument="&lt;wnd cls='TNewCheckListBox' /&gt;&lt;ctrl name='Select the additional tasks you would like Setup to perform whil*' role='outline' /&gt;&lt;ctrl name='Create a &amp;amp;desktop icon' role='check box' /&gt;" Guid="347c3fe8-8344-4fb0-b107-cb1e9fd43baf" InformativeScreenshot="31b9345ab688a330c26a1f0156a26e47.png" Reference="MqAZYQWN90eP4u4a7JMSuw/SSj6kV2v1UeHrbNb1K4VKg" ScopeSelectorArgument="&lt;wnd app='vs_code.tmp' cls='TWizardForm' title='Setup - Microsoft Visual Studio Code (User)' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                        <uix:Target CVScreenId="6cff4166-5a73-404e-b0ca-9bf5981d9371" CvTextArea="29, 41, 121, 11" CvTextArgument="Select Additional Tasks" CvType="Text" DesignTimeRectangle="29, 40, 469, 14" ElementType="Text" FuzzySelectorArgument="&lt;wnd cls='TNewStaticText' title='Select Additional Tasks' matching:title='fuzzy' fuzzylevel:title='0.0' check:text='Select Additional Tasks' /&gt;" Guid="4085ba19-88cd-4e92-ac20-7008be60804e" SearchSteps="FuzzySelector, CV" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NClick.Target>
+                                <uix:NClick.VerifyOptions>
+                                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                    <uix:VerifyExecutionOptions.Retry>
+                                      <InArgument x:TypeArguments="x:Boolean" />
+                                    </uix:VerifyExecutionOptions.Retry>
+                                    <uix:VerifyExecutionOptions.Timeout>
+                                      <InArgument x:TypeArguments="x:Double" />
+                                    </uix:VerifyExecutionOptions.Timeout>
+                                  </uix:VerifyExecutionOptions>
+                                </uix:NClick.VerifyOptions>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </uix:NClick>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Select Additional Tasks'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="488,57" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="35336ffe-cc5a-445d-b4a7-7531a9525d2f" Version="V5">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable CVScreenId="6cff4166-5a73-404e-b0ca-9bf5981d9371" ContentHash="HWxLJBy3402Ny5uVrDd7NA" CvElementArea="47, 210, 15, 15" CvTextArea="64, 212, 313, 10" CvTextArgument="Add &quot;Open with Code&quot; action to Windows Explorer file context menu" CvType="CheckBox" DesignTimeRectangle="45, 205, 482, 22" ElementType="CheckBox" FullSelectorArgument="&lt;wnd cls='TNewCheckListBox' /&gt;&lt;ctrl name='Select the additional tasks you would like Setup to perform whil*' role='outline' /&gt;&lt;ctrl name='Add &amp;quot;Open with Code&amp;quot; action to Windows Explorer file context men*' role='check box' /&gt;" Guid="73ba01bb-e910-4ec0-94de-d8ef97c3779d" InformativeScreenshot="d656e6bf192218d8e2c90266393e38ad.png" Reference="MqAZYQWN90eP4u4a7JMSuw/sMclHjf8zEyXLnc04X-JGQ" ScopeSelectorArgument="&lt;wnd app='vs_code.tmp' cls='TWizardForm' title='Setup - Microsoft Visual Studio Code (User)' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                        <uix:Target CVScreenId="6cff4166-5a73-404e-b0ca-9bf5981d9371" CvTextArea="29, 41, 121, 11" CvTextArgument="Select Additional Tasks" CvType="Text" DesignTimeRectangle="29, 40, 469, 14" ElementType="Text" FuzzySelectorArgument="&lt;wnd cls='TNewStaticText' title='Select Additional Tasks' matching:title='fuzzy' fuzzylevel:title='0.0' check:text='Select Additional Tasks' /&gt;" Guid="6ed26732-d305-43c7-bae5-0aade782fbbe" SearchSteps="FuzzySelector, CV" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NClick.Target>
+                                <uix:NClick.VerifyOptions>
+                                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                    <uix:VerifyExecutionOptions.Retry>
+                                      <InArgument x:TypeArguments="x:Boolean" />
+                                    </uix:VerifyExecutionOptions.Retry>
+                                    <uix:VerifyExecutionOptions.Timeout>
+                                      <InArgument x:TypeArguments="x:Double" />
+                                    </uix:VerifyExecutionOptions.Timeout>
+                                  </uix:VerifyExecutionOptions>
+                                </uix:NClick.VerifyOptions>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </uix:NClick>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Select Additional Tasks'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="488,57" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="35336ffe-cc5a-445d-b4a7-7531a9525d2f" Version="V5">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable CVScreenId="6cff4166-5a73-404e-b0ca-9bf5981d9371" ContentHash="nbeNhP5w10SqiS_73wS8Xg" CvElementArea="47, 232, 15, 15" CvTextArea="64, 234, 340, 11" CvTextArgument="Add &quot;Open with Code&quot; action to Windows Explorer directory context menu" CvType="CheckBox" DesignTimeRectangle="45, 227, 482, 23" ElementType="CheckBox" FullSelectorArgument="&lt;wnd cls='TNewCheckListBox' /&gt;&lt;ctrl name='Select the additional tasks you would like Setup to perform whil*' role='outline' /&gt;&lt;ctrl name='Add &amp;quot;Open with Code&amp;quot; action to Windows Explorer directory contex*' role='check box' /&gt;" Guid="6cf1491f-22f4-40da-92d9-024adbb533a2" InformativeScreenshot="cde0b5cd7165fcaa96f16cccc6d6ee18.png" Reference="MqAZYQWN90eP4u4a7JMSuw/8t3pFtIz3k66bHHsOIHs3Q" ScopeSelectorArgument="&lt;wnd app='vs_code.tmp' cls='TWizardForm' title='Setup - Microsoft Visual Studio Code (User)' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                        <uix:Target CVScreenId="6cff4166-5a73-404e-b0ca-9bf5981d9371" CvTextArea="29, 41, 121, 11" CvTextArgument="Select Additional Tasks" CvType="Text" DesignTimeRectangle="29, 40, 469, 14" ElementType="Text" FuzzySelectorArgument="&lt;wnd cls='TNewStaticText' title='Select Additional Tasks' matching:title='fuzzy' fuzzylevel:title='0.0' check:text='Select Additional Tasks' /&gt;" Guid="a4e385af-d639-4224-90db-7a33d2227b77" SearchSteps="FuzzySelector, CV" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NClick.Target>
+                                <uix:NClick.VerifyOptions>
+                                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                    <uix:VerifyExecutionOptions.Retry>
+                                      <InArgument x:TypeArguments="x:Boolean" />
+                                    </uix:VerifyExecutionOptions.Retry>
+                                    <uix:VerifyExecutionOptions.Timeout>
+                                      <InArgument x:TypeArguments="x:Double" />
+                                    </uix:VerifyExecutionOptions.Timeout>
+                                  </uix:VerifyExecutionOptions>
+                                </uix:NClick.VerifyOptions>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </uix:NClick>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '&amp;Next(3)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="488,57" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="35336ffe-cc5a-445d-b4a7-7531a9525d2f" Version="V5">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable CVScreenId="6cff4166-5a73-404e-b0ca-9bf5981d9371" ContentHash="FbbzkB2tGUePESfOoCdspQ" CvElementArea="405, 423, 70, 23" CvTextArea="429, 430, 21, 10" CvTextArgument="Next" CvType="Button" DesignTimeRectangle="404, 423, 70, 22" ElementType="Button" FullSelectorArgument="&lt;wnd aaname='Next' cls='TNewButton' title='&amp;amp;Next' /&gt;" Guid="c280c85f-ff4e-4143-b19b-1e920e244da1" InformativeScreenshot="2c7e26f6fc6a39e1424cbfb98ae128be.png" Reference="MqAZYQWN90eP4u4a7JMSuw/sc50QtiQE0KGCUAeimS4jg" ScopeSelectorArgument="&lt;wnd app='vs_code.tmp' cls='TWizardForm' title='Setup - Microsoft Visual Studio Code (User)' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                        <uix:Target CVScreenId="6cff4166-5a73-404e-b0ca-9bf5981d9371" CvTextArea="29, 41, 121, 11" CvTextArgument="Select Additional Tasks" CvType="Text" DesignTimeRectangle="29, 40, 469, 14" ElementType="Text" FuzzySelectorArgument="&lt;wnd cls='TNewStaticText' title='Select Additional Tasks' matching:title='fuzzy' fuzzylevel:title='0.0' check:text='Select Additional Tasks' /&gt;" Guid="a52f3bee-199a-4bfb-bc80-2343dc0da5f5" SearchSteps="FuzzySelector, CV" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NClick.Target>
+                                <uix:NClick.VerifyOptions>
+                                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                    <uix:VerifyExecutionOptions.Retry>
+                                      <InArgument x:TypeArguments="x:Boolean" />
+                                    </uix:VerifyExecutionOptions.Retry>
+                                    <uix:VerifyExecutionOptions.Timeout>
+                                      <InArgument x:TypeArguments="x:Double" />
+                                    </uix:VerifyExecutionOptions.Timeout>
+                                  </uix:VerifyExecutionOptions>
+                                </uix:NClick.VerifyOptions>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </uix:NClick>
+                              <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="YesNo" ChosenButton="[yesInstall]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="488,118" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[&quot;Are you ready to install VS Code?\nIf Yes, VS Code will be installed in the user's AppData directory.&quot;]" />
+                              <If Condition="[yesInstall = &quot;Yes&quot;]" sap:VirtualizedContainerService.HintSize="488,1403" sap2010:WorkflowViewState.IdRef="If_3">
+                                <If.Then>
+                                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="486,1183" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                    <Sequence.Variables>
+                                      <Variable x:TypeArguments="ui:UiElement" Name="installCompleteEl">
+                                        <Variable.Default>
+                                          <VisualBasicValue x:TypeArguments="ui:UiElement" ExpressionText="Nothing" />
+                                        </Variable.Default>
+                                      </Variable>
+                                    </Sequence.Variables>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '&amp;Install'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="35336ffe-cc5a-445d-b4a7-7531a9525d2f" Version="V5">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable CVScreenId="98435222-febe-49ab-99e2-d07e6f394907" ContentHash="kvhqajzukkST6WyJr8DPFQ" CvElementArea="405, 423, 71, 23" CvTextArea="425, 429, 29, 11" CvTextArgument="Install" CvType="Button" DesignTimeRectangle="404, 423, 70, 22" ElementType="Button" FullSelectorArgument="&lt;wnd aaname='Install' cls='TNewButton' title='&amp;amp;Install' /&gt;" Guid="9afe1f93-4715-41bd-8e94-bd973200aa36" InformativeScreenshot="590c5527d3fb3263c01f61028a528e26.png" Reference="MqAZYQWN90eP4u4a7JMSuw/1130SbJE2UyFmViYp6QdYQ" ScopeSelectorArgument="&lt;wnd app='vs_code.tmp' cls='TWizardForm' title='Setup - Microsoft Visual Studio Code (User)' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                                          <uix:TargetAnchorable.Anchors>
+                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                              <uix:Target CVScreenId="98435222-febe-49ab-99e2-d07e6f394907" CvTextArea="29, 41, 85, 13" CvTextArgument="Ready to Install" CvType="Text" DesignTimeRectangle="29, 40, 469, 14" ElementType="Text" FuzzySelectorArgument="&lt;wnd cls='TNewStaticText' title='Ready to Install' matching:title='fuzzy' fuzzylevel:title='0.0' check:text='Ready to Install' /&gt;" Guid="37273310-2ab3-408a-acd4-97e8a9782de2" SearchSteps="FuzzySelector, CV" />
+                                            </scg:List>
+                                          </uix:TargetAnchorable.Anchors>
+                                        </uix:TargetAnchorable>
+                                      </uix:NClick.Target>
+                                      <uix:NClick.VerifyOptions>
+                                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                          <uix:VerifyExecutionOptions.Retry>
+                                            <InArgument x:TypeArguments="x:Boolean" />
+                                          </uix:VerifyExecutionOptions.Retry>
+                                          <uix:VerifyExecutionOptions.Timeout>
+                                            <InArgument x:TypeArguments="x:Double" />
+                                          </uix:VerifyExecutionOptions.Timeout>
+                                        </uix:VerifyExecutionOptions>
+                                      </uix:NClick.VerifyOptions>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </uix:NClick>
+                                    <ui:WaitUiElementAppear WaitActive="{x:Null}" DisplayName="Find Element 'TNewStaticText'" FoundElement="[installCompleteEl]" sap:VirtualizedContainerService.HintSize="452,139" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_2" WaitVisible="True">
+                                      <ui:WaitUiElementAppear.Target>
+                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1fad9e0a-408e-48d4-8d51-a95ea4ac756a" InformativeScreenshot="0bb9b2e32314ffeda340c63874d7cb8d" Selector="&lt;wnd app='vs_code.tmp' cls='TWizardForm' title='Setup - Microsoft Visual Studio Code (User)' /&gt;&lt;wnd cls='TNewStaticText' title='Completing the Visual Studio Code Setup Wizard  ' /&gt;">
+                                          <ui:Target.TimeoutMS>
+                                            <InArgument x:TypeArguments="x:Int32" />
+                                          </ui:Target.TimeoutMS>
+                                          <ui:Target.WaitForReady>
+                                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                                          </ui:Target.WaitForReady>
+                                        </ui:Target>
+                                      </ui:WaitUiElementAppear.Target>
+                                    </ui:WaitUiElementAppear>
+                                    <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="452,482" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+                                      <ui:InterruptibleWhile.Body>
+                                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,351" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="416,123" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;wait a second for install to finish&quot;]" />
+                                        </Sequence>
+                                      </ui:InterruptibleWhile.Body>
+                                      <ui:InterruptibleWhile.Condition>
+                                        <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="installCompleteEl Is Nothing" />
+                                      </ui:InterruptibleWhile.Condition>
+                                    </ui:InterruptibleWhile>
+                                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Completing the Visual S…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,227" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="35336ffe-cc5a-445d-b4a7-7531a9525d2f" Version="V5">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable CVScreenId="938af97e-a39c-4724-bbce-cb6513959253" ContentHash="Oj6Zb39_tkKuJqo26MwX8w" CvElementArea="273, 219, 19, 19" CvTextArea="294, 221, 152, 13" CvTextArgument="Launch Visual Studio Code" CvType="CheckBox" DesignTimeRectangle="271, 215, 411, 28" ElementType="CheckBox" FullSelectorArgument="&lt;wnd aaname='Setup has finished installing Visual Studio Code on your compute*' cls='TNewCheckListBox' /&gt;&lt;ctrl name='Setup has finished installing Visual Studio Code on your compute*' role='outline' /&gt;&lt;ctrl name='Launch Visual Studio Code' role='check box' /&gt;" Guid="9cc47153-960b-4197-85e7-881f131b460f" InformativeScreenshot="f5efb099be07c50cb94016cc5f10986c.png" Reference="MqAZYQWN90eP4u4a7JMSuw/5BlswJndx0OfyzD1TaLoqg" ScopeSelectorArgument="&lt;wnd app='vs_code.tmp' cls='TWizardForm' title='Setup - Microsoft Visual Studio Code (User)' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                                          <uix:TargetAnchorable.Anchors>
+                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                              <uix:Target DesignTimeRectangle="271, 58, 411, 76" ElementType="Text" FuzzySelectorArgument="&lt;wnd cls='TNewStaticText' title='Completing the Visual Studio Code Setup Wizard  ' matching:title='fuzzy' fuzzylevel:title='0.0' check:text='Completing the Visual Studio Code Setup Wizard' /&gt;" Guid="e9e938e9-849d-4aca-9e73-7b456855c282" SearchSteps="FuzzySelector" />
+                                            </scg:List>
+                                          </uix:TargetAnchorable.Anchors>
+                                        </uix:TargetAnchorable>
+                                      </uix:NClick.Target>
+                                      <uix:NClick.VerifyOptions>
+                                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                          <uix:VerifyExecutionOptions.Retry>
+                                            <InArgument x:TypeArguments="x:Boolean" />
+                                          </uix:VerifyExecutionOptions.Retry>
+                                          <uix:VerifyExecutionOptions.Timeout>
+                                            <InArgument x:TypeArguments="x:Double" />
+                                          </uix:VerifyExecutionOptions.Timeout>
+                                        </uix:VerifyExecutionOptions>
+                                      </uix:NClick.VerifyOptions>
+                                    </uix:NClick>
+                                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '&amp;Finish'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,218" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="35336ffe-cc5a-445d-b4a7-7531a9525d2f" Version="V5">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable CVScreenId="938af97e-a39c-4724-bbce-cb6513959253" ContentHash="nnNNycI-skGJDYzqhhQEjg" CvElementArea="504, 528, 89, 28" CvTextArea="530, 535, 35, 13" CvTextArgument="Finish" CvType="Button" DesignTimeRectangle="505, 529, 88, 28" ElementType="Button" FullSelectorArgument="&lt;wnd aaname='Finish' cls='TNewButton' title='&amp;amp;Finish' /&gt;" Guid="c659d6a0-f626-4f1b-86df-3ba6314b6880" InformativeScreenshot="a36bb0f6ae4424b2938d9580715cb0ae.png" Reference="MqAZYQWN90eP4u4a7JMSuw/P7YoWrs6H0-4PYWSLLPlaQ" ScopeSelectorArgument="&lt;wnd app='vs_code.tmp' cls='TWizardForm' title='Setup - Microsoft Visual Studio Code (User)' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                                          <uix:TargetAnchorable.Anchors>
+                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                              <uix:Target DesignTimeRectangle="271, 58, 411, 76" ElementType="Text" FuzzySelectorArgument="&lt;wnd cls='TNewStaticText' title='Completing the Visual Studio Code Setup Wizard  ' matching:title='fuzzy' fuzzylevel:title='0.0' check:text='Completing the Visual Studio Code Setup Wizard' /&gt;" Guid="cb574c06-b07f-4bf5-b7dc-43581fdfd2e4" SearchSteps="FuzzySelector" />
+                                            </scg:List>
+                                          </uix:TargetAnchorable.Anchors>
+                                        </uix:TargetAnchorable>
+                                      </uix:NClick.Target>
+                                      <uix:NClick.VerifyOptions>
+                                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                          <uix:VerifyExecutionOptions.Retry>
+                                            <InArgument x:TypeArguments="x:Boolean" />
+                                          </uix:VerifyExecutionOptions.Retry>
+                                          <uix:VerifyExecutionOptions.Timeout>
+                                            <InArgument x:TypeArguments="x:Double" />
+                                          </uix:VerifyExecutionOptions.Timeout>
+                                        </uix:VerifyExecutionOptions>
+                                      </uix:NClick.VerifyOptions>
+                                    </uix:NClick>
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="486,90" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </Sequence>
+                                </If.Else>
+                              </If>
+                            </Sequence>
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="556,169" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="522,109" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[&quot;Install cancelled&quot;]" />
+                          </Sequence>
+                        </If.Else>
+                      </If>
+                    </Sequence>
+                  </ActivityAction>
+                </uix:NApplicationCard.Body>
+                <uix:NApplicationCard.TargetApp>
+                  <uix:TargetApp Area="0, 0, 0, 0" Version="V2" />
+                </uix:NApplicationCard.TargetApp>
+              </uix:NApplicationCard>
             </Sequence>
           </Sequence>
         </If.Else>

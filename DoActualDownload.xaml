@@ -111,38 +111,27 @@
       <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="1106,777" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap:VirtualizedContainerService.HintSize="1112,631.6566666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Download VS Code" sap:VirtualizedContainerService.HintSize="520,754" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <Sequence DisplayName="Download VS Code" sap:VirtualizedContainerService.HintSize="450,592" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486,175" sap2010:WorkflowViewState.IdRef="LogMessage_11" Message="[&quot;Starting download&quot;]" />
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,330" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-        <ui:CommentOut.Body>
-          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,219" sap2010:WorkflowViewState.IdRef="Sequence_6">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <uasf:DownloadFileFromUrl Timeout="{x:Null}" UserAgentHeader="{x:Null}" sap2010:Annotation.AnnotationText="We need to handle errors like no internet connection or direct download link change" ConflictResolution="Rename" DisplayName="Download File from URL" FileName="[Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;Downloads\vs_code.exe&quot;)]" sap:VirtualizedContainerService.HintSize="416,159" sap2010:WorkflowViewState.IdRef="DownloadFileFromUrl_2" ResponseAttachment="[vsCodeExe]" Url="https://code.visualstudio.com/sha/download?build=stable&amp;os=win32-x64-user">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </uasf:DownloadFileFromUrl>
-          </Sequence>
-        </ui:CommentOut.Body>
-      </ui:CommentOut>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486,166" sap2010:WorkflowViewState.IdRef="LogMessage_12" Message="[&quot;Done downloading&quot;]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_11" Message="[&quot;Starting download&quot;]" />
+      <uasf:DownloadFileFromUrl Timeout="{x:Null}" UserAgentHeader="{x:Null}" sap2010:Annotation.AnnotationText="We need to handle errors like no internet connection or direct download link change" ConflictResolution="Rename" DisplayName="Download File from URL" FileName="[Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;Downloads\vs_code.exe&quot;)]" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="DownloadFileFromUrl_3" ResponseAttachment="[vsCodeExe]" Url="https://code.visualstudio.com/sha/download?build=stable&amp;os=win32-x64-user">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </uasf:DownloadFileFromUrl>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_12" Message="[&quot;Done downloading&quot;]" />
     </Sequence>
   </Sequence>
 </Activity>
