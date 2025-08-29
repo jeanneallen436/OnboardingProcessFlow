@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="DownloadVSCode" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="DownloadVSCode" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -33,6 +33,13 @@
       <x:String>UiPath.Platform</x:String>
       <x:String>UiPath.Activities.System.ProcessTracking</x:String>
       <x:String>UiPath.Core.Activities.ProcessTracking</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -112,30 +119,30 @@
       <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
       <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="1106,1770" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap:VirtualizedContainerService.HintSize="1214,2716" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Download VS Code" sap:VirtualizedContainerService.HintSize="994,1747" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Download VS Code" sap:VirtualizedContainerService.HintSize="925,2693" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Boolean" Name="vsCodeExists" />
-        <Variable x:TypeArguments="upr:ILocalResource" Name="vsCodeExe">
-          <Variable.Default>
-            <VisualBasicValue x:TypeArguments="upr:ILocalResource" ExpressionText="Nothing" />
-          </Variable.Default>
-        </Variable>
+        <Variable x:TypeArguments="upr:ILocalResource" Default="[Nothing]" Name="vsCodeExe" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="960,175" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Downloading VS Code&quot;]" />
-      <Parallel sap:VirtualizedContainerService.HintSize="848,192" sap2010:WorkflowViewState.IdRef="Parallel_1">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="891,175" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Downloading VS Code&quot;]" />
+      <Parallel sap:VirtualizedContainerService.HintSize="891,224" sap2010:WorkflowViewState.IdRef="Parallel_1">
         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DisplayDownloadingMessage - Invoke Workflow File (DisplayDownloadingMessage.xaml)" sap:VirtualizedContainerService.HintSize="376,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="True" WorkflowFileName="DisplayDownloadingMessage.xaml">
           <ui:InvokeWorkflowFile.Arguments>
             <scg:Dictionary x:TypeArguments="x:String, Argument" />
@@ -147,27 +154,91 @@
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
       </Parallel>
-      <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists" Exists="[vsCodeExists]" sap:VirtualizedContainerService.HintSize="960,149" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;AppData\Local\Programs\Microsoft VS Code\Code.exe&quot;)]" PathType="File" />
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="960,175" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Found VS code?  &quot; + vsCodeExists.ToString()]" />
-      <If Condition="[vsCodeExists]" sap:VirtualizedContainerService.HintSize="960,470" sap2010:WorkflowViewState.IdRef="If_1">
+      <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists" Exists="[vsCodeExists]" sap:VirtualizedContainerService.HintSize="891,149" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;AppData\Local\Programs\Microsoft VS Code\Code.exe&quot;)]" PathType="File" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="891,175" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Found VS code?  &quot; + vsCodeExists.ToString()]" />
+      <If Condition="[vsCodeExists]" sap:VirtualizedContainerService.HintSize="891,1887" sap2010:WorkflowViewState.IdRef="If_1">
         <If.Then>
-          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,169" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="520,169" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="416,109" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;VS Code already installed\nPath: &quot; + Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;AppData\Local\Programs\Microsoft VS Code\Code.exe&quot;)]" />
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="486,109" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;VS Code already installed\nPath: &quot; + Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;AppData\Local\Programs\Microsoft VS Code\Code.exe&quot;)]" />
           </Sequence>
         </If.Then>
         <If.Else>
-          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,171" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="520,1588" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="tempDir" />
+              <Variable x:TypeArguments="x:String" Name="generatedTempDir" />
+            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="[vsCodeExe.LocalPath]" sap:VirtualizedContainerService.HintSize="416,111" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,337" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_11" Message="[&quot;Running Process: &quot; + vsCodeExe.LocalPath]" />
+                </Sequence>
+              </ui:CommentOut.Body>
+            </ui:CommentOut>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,282" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,171" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="[vsCodeExe.LocalPath]" sap:VirtualizedContainerService.HintSize="416,111" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
+                </Sequence>
+              </ui:CommentOut.Body>
+            </ui:CommentOut>
+            <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="C:\Users\jeanne.allen\Downloads\vs_code.exe" sap:VirtualizedContainerService.HintSize="486,120" sap2010:WorkflowViewState.IdRef="StartProcess_2" />
+            <Assign sap:VirtualizedContainerService.HintSize="486,115" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[tempDir]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) &amp; "\Temp"]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="486,115" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[generatedTempDir]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[Directory.GetDirectories(tempDir, "is-*.tmp")(0)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486,175" sap2010:WorkflowViewState.IdRef="LogMessage_12" Message="[generatedTempDir]" />
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Setup - Microsoft Visual Studio Code (User)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="486,384" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="f6ebd9e9-c0ba-419d-84a9-c10f419459ca" Version="V2">
+              <uix:NApplicationCard.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </ActivityAction>
+              </uix:NApplicationCard.Body>
+              <uix:NApplicationCard.TargetApp>
+                <uix:TargetApp Area="-713, 302, 571, 463" ContentHash="aIT7ALscpEehZYKm7aLJAA" FilePath="[Path.Combine(generatedTempDir, &quot;vs_code.tmp&quot;)]" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAASgSURBVFhHxdhdTFtlHMfxP+0YUF4GK2MwNimF4o0XRmPctYkXXhsTjbeaLdkYNFBKR0vXUlrKaxfInEs2RQcDNmkLLS2UGQ03m9qXU1pG4hLDwE2nRtouxkSTvzlHWNpnbXlOy8sv+dyU8zznC70DYB/3yo01tXT0UaB2bGNdcvPn32QjqyrymQOb1HBXB5qvkVU07MeXHc84klu/RCUjq0Pk8/u6Y9rF6e24bQ2OZwnq7vzxb+3VH8fIs3u+8k7PNKjvIqlhNpaUlA39ZB9CX+1aKC/WeL4nw3YK3CaZePp3qc5XQ967K2PjRBrPKnQsYioNM7Ednbr60EfenfXeGV46LurwrMJFD6bTYI9RIe/PajLt/GnhRU+MjElGZo9RId+R8WRa92mhaiEGqgWkIbPFqJDvyWg1GveHfOK4QGuMCvcC2VBInG8JP4DLK8gqtITvs5+RIclWrXafg/Z55IsMSQWkltCbQks4BpYwxmM/Y39GBsWvusN1DpTzyNdJ3aJFNh1DGnBsKNQHQ2FM5fhgqIMMY3dE5ZoCpRv5ECrd0Yo2x/uIWFj/VQxpQPlg+kBW8WBoPv4rP9LumoI2N/KRr3St1KtdMvY8r0DxQKgXBkO4k9zB0EZNn+/tUpX7NihcyEdZ+9y1+L8+F3gnijS4AyUDoUkYCCEV7RKCYo6KQDEXrVI5P4iP2woUkSGpPD9U3L88Cf0hpGL4DkHhRmidSylP4Vx5SeWsTyjbGhtYdzuKNBIOlvUtm6F/GamYfAjtHoRW5wuKWh0TCRcTQ8SCuqko0iDPQnlv8Cz0LSOVXgZB/Q1Ci5MjaHFGy9scZ8k7yWUVyI6L7GUDKOnu4WHF3GqlYvYN8q5k4wIno0iDPMtNrJg9A8pFhB4GwRykkmtmHlSag7SB+XUTUaRBnv0/Tj6LHMU8gimA0BOkIjAHo2Jz8Ax5J7mMA0taZkzQPIsJ2EiD74WYdAqMzHjCxcQQMU96K4o0nh8SyWfGoXkGk5I7EPQ/IJgYarkmJlRlDtYllG2NCxyPIg3uQIHcPg5NM5hW81akkaGWY2QipUbmvawCC5vtRrhgx50Im+zrZcr5t0QmZhy6GeRDZGSuEIGHpWMRpAGiJls3XLBhOnlNNucJxczR7RfkdwfGwBBAPg51B5bF3QHuK+cf2GjDVAqbbIr43357eQb+kTmGQESk97+LiLnSmxGkAaXNttdzGq0RaLRiPPYz9mdkWPwKuwIfQVcA+SoyMsbaLyNIg3tRyYXpMuF56zKctyLrUKN1if2MDEq2TCPJkFTI92U09mvL0fsjoPcjrdovIlTId2W8Ir3/tRydPwI6P9KoHY1QId+T1bjIS/4IXPLjTsiQVMh3ZL0TPcxRgdYXBK0P05F8HqFC3r8rK9H7ywRaH0NG8Q2sGN64T969a+MiO33fQqcPk5F8tplW9adP/yrt/2lv/v0WP4HGOwoaL5IkNzaTOnXt93/KLY+uk/fs6QRq7yiovRiPDDt5EGHxE2q8cujwIivfEMaa65ucqiu//ikeWjORzx/IKi6vf1wx/PhexfDjh5UjT56IB9fk5DPk/gOvwRTdfa5Z+QAAAABJRU5ErkJggg==" InformativeScreenshot="0359322936ada3578be3d56389d078f1.png" Reference="MqAZYQWN90eP4u4a7JMSuw/v635uANwkU2ysTj6M3Ataw" Selector="&lt;wnd app='vs_code.tmp' cls='TWizardForm' title='Setup - Microsoft Visual Studio Code (User)' /&gt;" Version="V2" />
+              </uix:NApplicationCard.TargetApp>
+            </uix:NApplicationCard>
           </Sequence>
         </If.Else>
       </If>
