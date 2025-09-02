@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -253,13 +253,13 @@
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Orchestrates onboarding, creates GitHub account, downloads VS Code" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1681,819.6566666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Orchestrates onboarding, creates GitHub account, downloads VS Code" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1057.6000000000001,698.0566666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <StateMachine InitialState="{x:Reference __ReferenceID0}" DisplayName="State Machine" sap:VirtualizedContainerService.HintSize="1251,818" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+    <StateMachine InitialState="{x:Reference __ReferenceID0}" DisplayName="State Machine" sap:VirtualizedContainerService.HintSize="1125.6000000000001,698.3999999999999" sap2010:WorkflowViewState.IdRef="StateMachine_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -269,7 +269,7 @@
           <av:PointCollection x:Key="ConnectorLocation">115,70 145,70 145,60.25 180,60.25</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="Assign email variable here" DisplayName="Initialize - Assign Email Variable" sap:VirtualizedContainerService.HintSize="240,161" sap2010:WorkflowViewState.IdRef="State_1">
+      <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="Assign email variable here" DisplayName="Initialize - Assign Email Variable" sap:VirtualizedContainerService.HintSize="240,160.8" sap2010:WorkflowViewState.IdRef="State_1">
         <State.Entry>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Assignvariables - Invoke Workflow File (Assignvariables.xaml)" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Assignvariables.xaml">
             <ui:InvokeWorkflowFile.Arguments>
@@ -281,7 +281,7 @@
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <av:Point x:Key="ShapeLocation">180,20</av:Point>
-            <av:Size x:Key="ShapeSize">240,161</av:Size>
+            <av:Size x:Key="ShapeSize">240,160.8</av:Size>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
             <x:Double x:Key="StateContainerWidth">228</x:Double>
             <x:Double x:Key="StateContainerHeight">98.6566666666667</x:Double>
@@ -318,7 +318,7 @@
             </sap:WorkflowViewStateService.ViewState>
             <Transition.Condition>[EmailIsValid]</Transition.Condition>
             <Transition.To>
-              <State x:Name="__ReferenceID5" sap2010:Annotation.AnnotationText="Assign Username Variable here" DisplayName="Create Username Variable" sap:VirtualizedContainerService.HintSize="260,141" sap2010:WorkflowViewState.IdRef="State_5">
+              <State x:Name="__ReferenceID5" sap2010:Annotation.AnnotationText="Assign Username Variable here" DisplayName="Create Username Variable" sap:VirtualizedContainerService.HintSize="260,140.8" sap2010:WorkflowViewState.IdRef="State_5">
                 <State.Entry>
                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CreateAndSaveUsername - Invoke Workflow File (CreateAndSaveUsername.xaml)" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="CreateAndSaveUsername.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
@@ -329,7 +329,7 @@
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <av:Point x:Key="ShapeLocation">440,245</av:Point>
-                    <av:Size x:Key="ShapeSize">260,141</av:Size>
+                    <av:Size x:Key="ShapeSize">260,140.8</av:Size>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     <x:Double x:Key="StateContainerWidth">248</x:Double>
                     <x:Double x:Key="StateContainerHeight">78.65666666666672</x:Double>
@@ -349,7 +349,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <Transition.To>
-                      <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="Assign Password variable here" DisplayName="Create Password Variable" sap:VirtualizedContainerService.HintSize="280,171" sap2010:WorkflowViewState.IdRef="State_6">
+                      <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="Assign Password variable here" DisplayName="Create Password Variable" sap:VirtualizedContainerService.HintSize="280,171.2" sap2010:WorkflowViewState.IdRef="State_6">
                         <State.Entry>
                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="EnterAndSavePassword - Invoke Workflow File (EnterAndSavePassword.xaml)" sap:VirtualizedContainerService.HintSize="337,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="EnterAndSavePassword.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
@@ -362,7 +362,7 @@
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <av:Point x:Key="ShapeLocation">760,190</av:Point>
-                            <av:Size x:Key="ShapeSize">280,171</av:Size>
+                            <av:Size x:Key="ShapeSize">280,171.2</av:Size>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             <x:Double x:Key="StateContainerWidth">268</x:Double>
                             <x:Double x:Key="StateContainerHeight">108.65666666666675</x:Double>
@@ -376,16 +376,16 @@
                           <Transition DisplayName="T6" sap:VirtualizedContainerService.HintSize="450,494" sap2010:WorkflowViewState.IdRef="Transition_5">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <av:PointCollection x:Key="ConnectorLocation">970,190 970,113 1110,113</av:PointCollection>
+                                <av:PointCollection x:Key="ConnectorLocation">970,190 970,112.84 1110,112.84</av:PointCollection>
                                 <x:Int32 x:Key="SrcConnectionPointIndex">58</x:Int32>
                                 <x:Int32 x:Key="DestConnectionPointIndex">29</x:Int32>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <Transition.Condition>[PasswordsMatch and IsValidPassword]</Transition.Condition>
                             <Transition.To>
-                              <State x:Name="__ReferenceID2" DisplayName="Create Github Account" sap:VirtualizedContainerService.HintSize="383,543" sap2010:WorkflowViewState.IdRef="State_2">
+                              <State x:Name="__ReferenceID2" DisplayName="Create Github Account" sap:VirtualizedContainerService.HintSize="381.6,537.6" sap2010:WorkflowViewState.IdRef="State_2">
                                 <State.Entry>
-                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CreateGitHubAccount - Invoke Workflow File (CreateGitHubAccount.xaml)" sap:VirtualizedContainerService.HintSize="337,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="CreateGitHubAccount.xaml">
+                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CreateGitHubAccount - Invoke Workflow File (CreateGitHubAccount.xaml)" sap:VirtualizedContainerService.HintSize="336.8,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="CreateGitHubAccount.xaml">
                                     <ui:InvokeWorkflowFile.Arguments>
                                       <InOutArgument x:TypeArguments="x:String" x:Key="DummyEmail">[GlobalVariablesNamespace.GlobalVariables.DummyEmail]</InOutArgument>
                                       <InOutArgument x:TypeArguments="ss:SecureString" x:Key="GitHubPassword">[GitHubPassword]</InOutArgument>
@@ -396,28 +396,72 @@
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <av:Point x:Key="ShapeLocation">1110,45</av:Point>
-                                    <av:Size x:Key="ShapeSize">280,170</av:Size>
+                                    <av:Size x:Key="ShapeSize">280,169.6</av:Size>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     <x:Double x:Key="StateContainerWidth">268</x:Double>
                                     <x:Double x:Key="StateContainerHeight">138.6566666666667</x:Double>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <State.Exit>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="337,143" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Waiting for verification&quot;]" />
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="336.8,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Waiting for verification&quot;]" />
                                 </State.Exit>
                                 <State.Transitions>
-                                  <Transition DisplayName="T8" sap:VirtualizedContainerService.HintSize="450,494" sap2010:WorkflowViewState.IdRef="Transition_8">
+                                  <Transition DisplayName="T8" sap:VirtualizedContainerService.HintSize="1047.2,849.6" sap2010:WorkflowViewState.IdRef="Transition_8">
+                                    <Transition.Trigger>
+                                      <uix:NCheckState DisplayName="Check App State 'Confirm your email addr…'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="987.2,387.2" sap2010:WorkflowViewState.IdRef="NCheckState_1" Timeout="5" Version="V5">
+                                        <uix:NCheckState.IfExists>
+                                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="467.2,168.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                                            <Sequence.Variables>
+                                              <Variable x:TypeArguments="x:String" Name="variable1" />
+                                            </Sequence.Variables>
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <Assign sap:VirtualizedContainerService.HintSize="433.6,107.2" sap2010:WorkflowViewState.IdRef="Assign_1">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:Boolean">[EmailConfirmation]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                          </Sequence>
+                                        </uix:NCheckState.IfExists>
+                                        <uix:NCheckState.IfNotExists>
+                                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="467.2,168.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <Assign sap:VirtualizedContainerService.HintSize="433.6,107.2" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:Boolean">[EmailConfirmation]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                          </Sequence>
+                                        </uix:NCheckState.IfNotExists>
+                                        <uix:NCheckState.Target>
+                                          <uix:TargetAnchorable BrowserURL="github.com/account_verifications" CVScreenId="d9dd40dd-d71a-4dbe-aafc-4e34d44645e6" CvTextArea="1213, 197, 316, 22" CvTextArgument="Confirm your email address" CvType="Text" DesignTimeRectangle="1214, 193, 441, 31" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H2' /&gt;" Guid="6f9b9364-a985-410b-bb55-a6ba08a42050" InformativeScreenshot="fbd3193a3ae04110da2923ad2d093080.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Please verify your email address · GitHub' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+                                        </uix:NCheckState.Target>
+                                      </uix:NCheckState>
+                                    </Transition.Trigger>
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <av:PointCollection x:Key="ConnectorLocation">1264,215 1264,245 1268,245 1268,305</av:PointCollection>
+                                        <av:PointCollection x:Key="ConnectorLocation">1264,214.6 1264,244.6 1364,244.6 1364,305</av:PointCollection>
                                         <x:Int32 x:Key="SrcConnectionPointIndex">43</x:Int32>
                                         <x:Int32 x:Key="DestConnectionPointIndex">30</x:Int32>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <Transition.To>
-                                      <State x:Name="__ReferenceID6" DisplayName="Email Validation" sap:VirtualizedContainerService.HintSize="383,510" sap2010:WorkflowViewState.IdRef="State_7">
+                                      <State x:Name="__ReferenceID6" DisplayName="Email Validation" sap:VirtualizedContainerService.HintSize="260,129.6" sap2010:WorkflowViewState.IdRef="State_7">
                                         <State.Entry>
-                                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="EmailValidation - Invoke Workflow File (EmailValidation.xaml)" sap:VirtualizedContainerService.HintSize="337,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="EmailValidation.xaml">
+                                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="EmailValidation - Invoke Workflow File (EmailValidation.xaml)" sap:VirtualizedContainerService.HintSize="337.6,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="EmailValidation.xaml">
                                             <ui:InvokeWorkflowFile.Arguments>
                                               <scg:Dictionary x:TypeArguments="x:String, Argument" />
                                             </ui:InvokeWorkflowFile.Arguments>
@@ -426,7 +470,7 @@
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <av:Point x:Key="ShapeLocation">1260,305</av:Point>
-                                            <av:Size x:Key="ShapeSize">20,20</av:Size>
+                                            <av:Size x:Key="ShapeSize">260,129.6</av:Size>
                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                             <x:Double x:Key="StateContainerWidth">248</x:Double>
                                             <x:Double x:Key="StateContainerHeight">98.65666666666675</x:Double>
@@ -436,7 +480,7 @@
                                           <Transition DisplayName="T2" sap:VirtualizedContainerService.HintSize="450,494" sap2010:WorkflowViewState.IdRef="Transition_2">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <av:PointCollection x:Key="ConnectorLocation">1260,315 1180,315 1180,550</av:PointCollection>
+                                                <av:PointCollection x:Key="ConnectorLocation">1260,369.8 1180,369.8 1180,550</av:PointCollection>
                                                 <x:Int32 x:Key="SrcConnectionPointIndex">37</x:Int32>
                                                 <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
                                               </scg:Dictionary>
@@ -472,14 +516,14 @@
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
                                                     <Transition.To>
-                                                      <State x:Name="__ReferenceID4" DisplayName="Onboarding Complete" sap:VirtualizedContainerService.HintSize="240,190" sap2010:WorkflowViewState.IdRef="State_4" IsFinal="True">
+                                                      <State x:Name="__ReferenceID4" DisplayName="Onboarding Complete" sap:VirtualizedContainerService.HintSize="240,189.6" sap2010:WorkflowViewState.IdRef="State_4" IsFinal="True">
                                                         <State.Entry>
                                                           <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,86" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;Finished onboarding!!&quot;]" />
                                                         </State.Entry>
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                             <av:Point x:Key="ShapeLocation">70,545</av:Point>
-                                                            <av:Size x:Key="ShapeSize">240,190</av:Size>
+                                                            <av:Size x:Key="ShapeSize">240,189.6</av:Size>
                                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                             <x:Double x:Key="StateContainerWidth">228</x:Double>
                                                             <x:Double x:Key="StateContainerHeight">158.65666666666675</x:Double>
@@ -495,6 +539,10 @@
                                         </State.Transitions>
                                       </State>
                                     </Transition.To>
+                                    <Transition.Action>
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="947.2,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;Confirmation received- cycling through inbox&quot;]" />
+                                    </Transition.Action>
+                                    <Transition.Condition>[EmailConfirmation]</Transition.Condition>
                                   </Transition>
                                 </State.Transitions>
                               </State>
@@ -535,6 +583,7 @@
         <Variable x:TypeArguments="x:Boolean" Name="EmailIsValid" />
         <Variable x:TypeArguments="ss:SecureString" Name="PasswordConfirmation" />
         <Variable x:TypeArguments="x:Boolean" Name="PasswordsMatch" />
+        <Variable x:TypeArguments="x:Boolean" Name="EmailConfirmation" />
       </StateMachine.Variables>
     </StateMachine>
   </Sequence>
