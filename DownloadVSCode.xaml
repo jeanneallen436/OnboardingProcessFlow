@@ -1,7 +1,6 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="DownloadVSCode" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="sendDownloadSucceeded" Type="OutArgument(x:Boolean)" />
-    <x:Property Name="outDownloadSucceeded" Type="InArgument(x:String)" />
+    <x:Property Name="argDoDownload" Type="InOutArgument(x:Boolean)" />
   </x:Members>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
@@ -134,59 +133,71 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="1156,1009" sap2010:WorkflowViewState.IdRef="Sequence_1">
-    <Sequence.Variables>
-      <Variable x:TypeArguments="x:Boolean" Name="inDownloadSucceeded" />
-    </Sequence.Variables>
+  <Sequence sap:VirtualizedContainerService.HintSize="1450,1045" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Download VS Code" sap:VirtualizedContainerService.HintSize="882,683" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Download VS Code" sap:VirtualizedContainerService.HintSize="1012,1022" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
-        <Variable x:TypeArguments="x:Boolean" Name="vsCodeExists" />
-        <Variable x:TypeArguments="upr:ILocalResource" Default="[Nothing]" Name="vsCodeExe" />
         <Variable x:TypeArguments="x:Boolean" Name="downloadSucceeded" />
-        <Variable x:TypeArguments="x:String" Name="sendDownloadVSCode" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="848,175" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Downloading VS Code&quot;]" />
-      <Parallel DisplayName="Downloading VS Code " sap:VirtualizedContainerService.HintSize="848,224" sap2010:WorkflowViewState.IdRef="Parallel_1">
-        <Parallel.Variables>
-          <Variable x:TypeArguments="x:String" Name="inVsCodeExePath" />
-        </Parallel.Variables>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="978,175" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Downloading VS Code&quot;]" />
+      <Parallel DisplayName="Downloading VS Code " sap:VirtualizedContainerService.HintSize="978,764" sap2010:WorkflowViewState.IdRef="Parallel_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DisplayDownloadingMessage - Invoke Workflow File (DisplayDownloadingMessage.xaml)" sap:VirtualizedContainerService.HintSize="376,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="True" WorkflowFileName="DisplayDownloadingMessage.xaml">
+        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DisplayDownloadingMessage - Invoke Workflow File (DisplayDownloadingMessage.xaml)" sap:VirtualizedContainerService.HintSize="376,694" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="True" WorkflowFileName="DisplayDownloadingMessage.xaml">
           <ui:InvokeWorkflowFile.Arguments>
             <scg:Dictionary x:TypeArguments="x:String, Argument" />
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
-        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DoActualDownload - Invoke Workflow File (DoActualDownload.xaml)" sap:VirtualizedContainerService.HintSize="378,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="True" WorkflowFileName="DoActualDownload.xaml">
-          <ui:InvokeWorkflowFile.Arguments>
-            <InArgument x:TypeArguments="x:Boolean" x:Key="outDownloadSucceeded">[inDownloadSucceeded]</InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="vsCodeExe">[inVsCodeExePath]</InArgument>
-          </ui:InvokeWorkflowFile.Arguments>
-        </ui:InvokeWorkflowFile>
+        <Sequence sap:VirtualizedContainerService.HintSize="508,694" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="sendDownloadSucceeded" />
+            <Variable x:TypeArguments="x:Boolean" Name="dD" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_7">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[dD]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">[argDoDownload]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="434,118" sap2010:WorkflowViewState.IdRef="MessageBox_6" Text="[dD.ToString()]" />
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DoActualDownload - Invoke Workflow File (DoActualDownload.xaml)" sap:VirtualizedContainerService.HintSize="434,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="True" WorkflowFileName="DoActualDownload.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InOutArgument x:TypeArguments="x:Boolean" x:Key="inargDoDownload">[dD]</InOutArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="outDownloadSucceded">[downloadSucceeded]</OutArgument>
+              <OutArgument x:TypeArguments="upr:ILocalResource" x:Key="vsCodeExe">[vsCodeExe]</OutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <Assign sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_9">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[argDoDownload]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">[dD]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="434,109" sap2010:WorkflowViewState.IdRef="MessageBox_7" Text="[&quot;Download succeeded from DownloadVSCode: &quot; + dD.ToString() + argDoDownload.ToString()]" />
+        </Sequence>
       </Parallel>
-      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="848,118" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[inDownloadSucceeded.ToString()]" />
-      <Assign sap:VirtualizedContainerService.HintSize="848,106" sap2010:WorkflowViewState.IdRef="Assign_5">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:Boolean">[sendDownloadSucceeded]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:Boolean">[inDownloadSucceeded]</InArgument>
-        </Assign.Value>
-      </Assign>
     </Sequence>
   </Sequence>
 </Activity>

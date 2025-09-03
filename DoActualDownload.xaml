@@ -1,5 +1,6 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="DoActualDownload" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uasf="clr-namespace:UiPath.Activities.System.FileOperations;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
+    <x:Property Name="inargDoDownload" Type="InOutArgument(x:Boolean)" />
     <x:Property Name="outDownloadSucceded" Type="OutArgument(x:Boolean)" />
     <x:Property Name="vsCodeExe" Type="OutArgument(upr:ILocalResource)" />
   </x:Members>
@@ -113,7 +114,7 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="1156,1238" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap:VirtualizedContainerService.HintSize="1347,1238" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -142,15 +143,15 @@
         </sap:WorkflowViewStateService.ViewState>
       </uasf:DownloadFileFromUrl>
       <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists" Exists="[downloadSucceeded]" sap:VirtualizedContainerService.HintSize="725,149" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),  &quot;Downloads\vs_code.exe&quot;)]" PathType="File" />
-      <Assign sap:VirtualizedContainerService.HintSize="725,115" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign sap:VirtualizedContainerService.HintSize="725,115" sap2010:WorkflowViewState.IdRef="Assign_2">
         <Assign.To>
-          <OutArgument x:TypeArguments="x:Boolean">[outDownloadSucceded]</OutArgument>
+          <OutArgument x:TypeArguments="x:Boolean">[inargDoDownload]</OutArgument>
         </Assign.To>
         <Assign.Value>
           <InArgument x:TypeArguments="x:Boolean">[downloadSucceeded]</InArgument>
         </Assign.Value>
       </Assign>
-      <If Condition="[outDownloadSucceded]" sap:VirtualizedContainerService.HintSize="725,525" sap2010:WorkflowViewState.IdRef="If_1">
+      <If Condition="[inargDoDownload]" sap:VirtualizedContainerService.HintSize="725,525" sap2010:WorkflowViewState.IdRef="If_1">
         <If.Then>
           <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
